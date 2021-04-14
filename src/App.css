@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+@import '~antd/dist/antd.css';
+
+:root {
+  --weverseGreen: #84FAB0;
+  --weverseBlue: #8FD3F4;
+  --weversePurple:#9E90F2;
+  --weverseBlack:#2E2E2E;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* RWD Container */
+.container {
+    width: 100vw; 
+    display: flex;
+    align-self: center;
+    margin: auto;
+    background-color: var(--weverseBlack);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* sm */
+@media (min-width: 576px) { 
+  
+} 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* md */
+@media (min-width: 768px) {
+  
+} 
+
+/* lg */
+@media (min-width: 992px) {
+  
+} 
+
+/* xl */
+@media (min-width: 1200px) {
+  
+} 
+
+/* xxl */
+@media (min-width: 1600px) {
+  
+} 
+
+.main-layout {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-header,
+.layout-footer {
+  padding: 0;
+  height: auto;
+  background-color: var(--weversePurple);
+}
+
+/* header */
+.header {
+  display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  background-color: var(--weversePurple);
+  height:70px;
+  line-height: 70px;
 }
 
-.App-link {
-  color: #61dafb;
+.header-wrap-left,.header-wrap-right,.header-wrap-middle {
+  display: flex;
+  flex-direction: row;
+  padding-top: 0rem;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-wrap-left{
+  width:15%;
+}
+.header-wrap-right{
+  width:30%;
+  justify-content: flex-end;
+}
+.header-wrap-middle{
+  width:55%;
+}
+
+
+.hr-header-line {
+  width: 100;
+  border:0;
+  height: 0.1rem;
+  background-color: coral;
+  opacity: 1;
+  margin: 0;
+}
+
+
+
+
+/* icon */
+
+
+.header-icon{
+  height:70px;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  margin-left:2rem;
+  margin-right:2rem;
+  /* color: black; */
+}
+
+a{
+  color:var(--weverseGreen);
+}
+a:hover {
+  color: var(--weverseBlue);
+}
+a:active {
+  color: var(--weverseGreen);
 }
