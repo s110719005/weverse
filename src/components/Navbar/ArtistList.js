@@ -8,7 +8,7 @@ export default function ArtistList() {
     const handleCloseDrawer = () => setIsOnTouch(false);
     return (
         <div className="navbar-artistlist">
-            <div className="navbar-artistlist-text">
+            <div className="navbar-artistlist-topic navbar-artistlist-text">
                 Artist 
             </div>
            <div className="navbar-artistname-container">
