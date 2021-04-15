@@ -2,11 +2,11 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import './App.css';
 import Home from './pages/Home'
-//import { StoreProvider } from "./store";
+import { StoreProvider } from "./store";
 
 function App() {
   return (
-    // <StoreProvider>
+     <StoreProvider>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -15,7 +15,7 @@ function App() {
           <Route path="/product/:productId" component={Product} /> */}
         </Switch>
       </BrowserRouter>
-    //</StoreProvider>
+    </StoreProvider>
   );
 }
 

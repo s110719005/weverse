@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { Layout } from 'antd';
 import WeverseHeader from "../components/Header";
 import WeverseNavbar from "../components/Navbar/Navbar";
@@ -10,15 +10,17 @@ const { Header, Content, Footer } = Layout;
 
 function Home() {
   //const { state: { page: { title, products } } } = useContext(StoreContext);
+  const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
     <Layout className="container main-layout">
-      <WeverseHeader />
+      <WeverseHeader setIsNavBarVisible={setIsNavBarVisible} isNavBarVisible={isNavBarVisible}/>
       <Layout className="layout-content">
-        <WeverseNavbar />
-        <Content>
-          <MainArea />
-        </Content>
-        
+        <Layout className="layout-content-gradient">
+          <WeverseNavbar isNavBarVisible={isNavBarVisible}/>
+          <Content>
+            <MainArea />
+          </Content>
+        </Layout>
       </Layout>
     </Layout>
   );
