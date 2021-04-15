@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingFilled,MenuOutlined } from '@ant-design/icons';
+import { ShoppingOutlined,MenuOutlined,NotificationOutlined,UserOutlined } from '@ant-design/icons';
 import { CartIcon } from "./Icons";
 //import { StoreContext } from "../store";
 //import CartSummary from "./CartSummary";
@@ -30,13 +30,13 @@ export default function Header({ title }) {
         </div>  
         <div className="header-wrap-right">
           <Link to="/">
-            <ShoppingFilled className="header-icon"/ >
+            <ShoppingOutlined className="header-icon"/ >
           </Link>
           <Link to="/">
-            <ShoppingFilled className="header-icon"/ >
+            <NotificationOutlined className="header-icon"/ >
           </Link>
           <Link to="/">
-            <ShoppingFilled className="header-icon"/ >
+            <UserOutlined className="header-icon"/ >
           </Link>
         </div>
             
