@@ -3,6 +3,8 @@ import { Drawer } from "antd";
 import { Select } from 'antd';
 import { Input, Space } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
+import ProductList from "./Shop/ProductList";
+import Layout from "antd/lib/layout/layout";
 const { Option } = Select;
 
 const { Search } = Input;
@@ -13,8 +15,8 @@ function handleChange(value) {
 
 const onSearch = value => console.log(value);
 
-export default function MainArea() {
-   
+
+export default function MainArea({isNavBarVisible}) {
     return (
         <div className="mainarea">
             <div className="mainarea-topic-text">
@@ -40,6 +42,10 @@ export default function MainArea() {
             <div className="mainarea-artist-text">
                 BTS
             </div>
+            <div className="mainarea-productlist-container">
+                <ProductList isNavBarVisible={isNavBarVisible}/>
+            </div>
+            
         </div>
             
     );

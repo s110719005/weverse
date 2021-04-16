@@ -258,8 +258,7 @@
 
 .mainarea{
   height:100%;
-  width:auto;
-  /* background-color: coral; */
+  width:100%;
   padding:7rem;
   padding-top: 0rem;
 }
@@ -322,3 +321,23 @@
   font-family: 'Roboto Mono', monospace;
 }
 
+.mainarea-productlist-container{
+  height:80%;
+  overflow: auto;
+}
+
+.mainarea-product{
+  border-radius: 10px;
+  border:0;
+  background-color: transparent;
+  background-color: coral;
+  display: flex;
+  text-align: center;
+}
+
+.product-name{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color:white;
+  margin:1rem 0rem 0rem 0rem;
+}

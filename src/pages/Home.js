@@ -17,9 +17,7 @@ function Home() {
       <Layout className="layout-content">
         <Layout className="layout-content-gradient">
           <WeverseNavbar isNavBarVisible={isNavBarVisible}/>
-          <Content>
-            <MainArea />
-          </Content>
+          <MainArea isNavBarVisible={isNavBarVisible}/>
         </Layout>
       </Layout>
     </Layout>
