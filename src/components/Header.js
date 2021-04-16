@@ -24,7 +24,7 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
         <div className="header-wrap-left">
           
           
-          <Link to="/"
+          <a
             onClick={() => {
               setIsNavBarVisible(!isNavBarVisible);
               console.log(isNavBarVisible);
@@ -38,7 +38,7 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
                 <MenuFoldOutlined className="header-icon"/>
               )}
             </>
-          </Link>
+          </a>
         </div>
         <div className="header-wrap-middle" visible={isOnTouch}>
           Weverse

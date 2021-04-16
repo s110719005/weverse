@@ -13,6 +13,10 @@ export default function ProductItem({ product }) {
             <div className="product-name">
                     {product.name}
             </div>
+            <span
+                className="product-price">
+                USD {product.price}.00
+            </span>
             {/* <div className="product-info">
                 <h6 className="product-category">
                     {product.category}

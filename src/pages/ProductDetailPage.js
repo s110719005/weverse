@@ -1,25 +1,28 @@
-import { useContext,useState } from "react";
+import { useContext,useState,useEffect } from "react";
 import { Layout } from 'antd';
 import WeverseHeader from "../components/Header";
 import WeverseNavbar from "../components/Navbar/Navbar";
-import MainArea from "../components/MainArea";
+import ProductDetail from "../components/Shop/ProductDetail";
+import { setProductDetail } from "../actions";
+import { StoreContext } from "../store";
 
 //import { StoreContext } from "../store"
 
 const { Header, Content, Footer } = Layout;
 
-function Home() {
-  //const { state: { page: { title, products } } } = useContext(StoreContext);
+function ProductDetailPage({ match }) {
+    const { dispatch } = useContext(StoreContext);   
+    useEffect(() => setProductDetail(dispatch, match.params.productId, 0),[]);
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
     <Layout className="container main-layout">
       <WeverseHeader setIsNavBarVisible={setIsNavBarVisible} isNavBarVisible={isNavBarVisible}/>
       <Layout className="layout-content">
           <WeverseNavbar isNavBarVisible={isNavBarVisible}/>
-          <MainArea isNavBarVisible={isNavBarVisible}/>
+          <ProductDetail/>
       </Layout>
     </Layout>
   );
 }
 
-export default Home;
+export default ProductDetailPage;

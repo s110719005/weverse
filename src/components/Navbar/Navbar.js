@@ -34,6 +34,7 @@ export default function Navbar({isNavBarVisible}) {
         // from: { opacity: 0 },
         // to: { opacity: 1 }
         opacity: !isNavBarVisible?0.5:1,
+        borderColor:!isNavBarVisible?"#2e2e2e":"white",
         width:!isNavBarVisible?"0rem":"15rem",
         paddingLeft: !isNavBarVisible?"0rem":"1.5rem",
         paddingRight: !isNavBarVisible?"0rem":"1.5rem",

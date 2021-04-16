@@ -112,7 +112,7 @@
 .hr-header-line {
   width: 100;
   border:0;
-  height: 0rem;
+  height: 1px;
   background-color: white;
   opacity: 1;
   margin: 0;
@@ -160,9 +160,10 @@
   width:0rem;
   padding:1.5rem;
   overflow-y: auto;
-  border-right: white;
+  border:0;
+  border-color: white;
+  border-right-width:1px;
   border-style: solid;
-  border-width: 1px;
   opacity: 1;
 }
 
@@ -330,9 +331,9 @@
   border-radius: 10px;
   border:0;
   background-color: transparent;
-  background-color: coral;
+  /* background-color: coral; */
   display: flex;
-  text-align: center;
+  text-align: start;
 }
 
 .product-name{
@@ -341,3 +342,83 @@
   color:white;
   margin:1rem 0rem 0rem 0rem;
 }
+.product-price{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  color:rgb(185, 185, 185);
+  margin:1rem 0rem 0rem 0rem;
+}
+
+/* productdetail */
+.productdetail-card-area{
+  display: flex;
+  justify-content: center;
+  /* background-color: coral; */
+  width:100%;
+  height:100%;
+  
+}
+.productdetail-card{
+  width:58rem;
+  height:25rem;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.productdetail-card1,.productdetail-card2,.productdetail-card1-back,.productdetail-card2-back{
+  width:58rem;
+  height:25rem;
+  border-radius: 10px;
+  position: absolute;
+  
+}
+
+
+.productdetail-card1{
+  background-color: var(--weverseBlack);
+  border-style: solid;
+  border-color:white;
+  border-width:1px;
+  margin-top: 1.5rem;
+  margin-right: 0rem;
+  pointer-events: all;
+}
+
+.productdetail-card2{
+  
+  /* background-color: goldenrod; */
+  background: linear-gradient(90deg, var(--weverseGreen) 20%, var(--weverseBlue) 84%);
+  opacity: 40%;
+  margin-left: 3rem;
+  pointer-events: none;
+}
+.productdetail-card1-back{
+  /* background-color: goldenrod; */
+  background: linear-gradient(90deg, var(--weverseGreen) 20%, var(--weverseBlue) 84%);
+  opacity: 40%;
+  margin-top: 1.5rem;
+  margin-right: 0rem;
+  pointer-events: none;
+}
+
+.productdetail-card2-back{
+  
+  
+  background-color: var(--weverseBlack);
+  border-style: solid;
+  border-color:white;
+  border-width:1px;
+  margin-left: 3rem;
+  pointer-events: all;
+}
+
+.productdetail-button-flip{
+  margin:2rem;
+  color:var(--weversePurple);
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+

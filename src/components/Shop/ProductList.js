@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 import ProductItem from "./ProductItem";
 import btsProducts from "../../json/btsProducts.json";
 
-export default function ProductList(isNavBarVisible) {
+export default function ProductList({products}) {
   return (
     // <Row gutter={[32, 32]}>
     // {products.map(product => (
@@ -18,14 +18,14 @@ export default function ProductList(isNavBarVisible) {
     //   ))}
     // </Row>
     <Row gutter={[32, 32]}>
-        {btsProducts.map(product => (
+        {products.map(product => (
         <Col 
-          key={btsProducts.id} 
+          key={product.id} 
           xs={{ span: 32 }} 
           sm={{ span: 12 }} 
           md={{ span: 8 }} 
           lg={{ span: 6 }}
-          xl={{ span: 4 }}
+          xl={{ span: 6 }}
           xxl={{ span: 2 }}
         >
           <ProductItem product={product}/>

@@ -1,4 +1,5 @@
 import { createContext,useReducer } from "react";
+import products from "../json/btsProducts.json";
 
 import {
   SET_PAGE_CONTENT,
@@ -14,6 +15,11 @@ import {
  const initialState = {
   page: {
     title: "NORDIC NEST Shopping Cart",
+    products,
+  },
+  productDetail: {
+    product: {},
+    qty: 1,
   },
 };
 
@@ -24,8 +30,8 @@ function reducer(state, action) {
         ...state,
         page: action.payload,
       };
-    
-    
+    case SET_PRODUCT_DETAIL:
+      return { ...state, productDetail: action.payload };
     default:
       return state;
   }

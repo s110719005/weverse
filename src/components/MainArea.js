@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Drawer } from "antd";
 import { Select } from 'antd';
 import { Input, Space } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import ProductList from "./Shop/ProductList";
 import Layout from "antd/lib/layout/layout";
+
+import {useSpring, animated} from 'react-spring'
+
+import { StoreContext } from "../store"
 const { Option } = Select;
 
 const { Search } = Input;
@@ -16,9 +20,19 @@ function handleChange(value) {
 const onSearch = value => console.log(value);
 
 
-export default function MainArea({isNavBarVisible}) {
+function MainArea({isNavBarVisible}) {
+    const { state: { page: { title, products } } } = useContext(StoreContext);
+    const closeNav = useSpring({
+        // from: { opacity: 0 },
+        // to: { opacity: 1 }
+        paddingLeft: !isNavBarVisible?"7rem":"3rem",
+        paddingRight: !isNavBarVisible?"7rem":"3rem",
+      });
     return (
-        <div className="mainarea">
+        <animated.div  style={closeNav} className="mainarea">
+           
+       
+        {isNavBarVisible ? true : false }
             <div className="mainarea-topic-text">
                 Weverse Shop
             </div>
@@ -43,10 +57,13 @@ export default function MainArea({isNavBarVisible}) {
                 BTS
             </div>
             <div className="mainarea-productlist-container">
-                <ProductList isNavBarVisible={isNavBarVisible}/>
+                <ProductList products={products}/>
             </div>
             
-        </div>
+       
+        </animated.div>
             
     );
 }
+
+export default MainArea;
