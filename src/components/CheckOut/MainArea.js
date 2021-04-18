@@ -11,6 +11,7 @@ import {useSpring, animated} from 'react-spring'
 import { StoreContext } from "../../store"
 import CartList from "./CartList";
 import SmallCartList from "./SmallCartList";
+import Finish from "./Finish";
 const { Option } = Select;
 
 const { Search } = Input;
@@ -73,14 +74,20 @@ function MainArea({isNavBarVisible}) {
             <animated.div style={Page3gradientChange}className = "checkout-card3 checkout-card-gradient"></animated.div>
                 
                 <animated.div style={Page3bgChange} className="checkout-card3">
+                    <Finish/>
                     <div className="checkout-btn-con">
                         <div className="btn-hover-purple text-white checkout-back-btn1"
-                                onClick={() => {
-                                    setIsPage2(!isPage2);
-                                }}
-                            >
-                                Previous
+                            style={{opacity:0}}
+                        >
+                            Previous
                         </div>
+                        <Link to="/">
+                            <div className="text-white checkout-next-btn1"
+                                
+                            >
+                                Back to Shop
+                            </div>
+                        </Link>
                     </div>
 
                 </animated.div>

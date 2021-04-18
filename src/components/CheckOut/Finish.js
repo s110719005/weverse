@@ -8,7 +8,7 @@ import { DownOutlined } from '@ant-design/icons';
 import {useSpring, animated} from 'react-spring'
 const { Option } = Select;
 
-export default function SmallCartList({ isModalVisible, toggleModal }) {
+export default function Finish({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
@@ -37,36 +37,12 @@ export default function SmallCartList({ isModalVisible, toggleModal }) {
             <div>Cart is empty</div>
         ) : 
         (
-            <div className="smallList">
-            <div className="smallList-notopen">
-                <div className="smallList1">
-                    <div className="smallList-">
-                        <div className="smallList-notopen-con">
-                            <div className="text-white checkout-bigtitle">
-                                    Order Total&nbsp;
-                            </div>
-                            <div className="text-white checkout-bigtitle2">
-                                    :&nbsp;${Math.trunc(getTotalPrice())+80}
-                            </div>
-                        </div>
-                        <div className="smallList-notopen-con">
-                            <div className="text-white checkout-bigtitle">
-                                    Shopping Bag
-                            </div>
-                            <div className="text-white checkout-bigtitle2">
-                            :&nbsp;{cartItems.length}&nbsp;items
-                            </div>
-                        </div>
-                    </div>
-                    <div className="smallList-notopen-btn"
-                        onClick={() => {
-                            setIsFirstListOPen(!isFirstListOPen);
-                        }}
-                    >
-                        <DownOutlined />
-                    </div>
+            <div className="">
+                <div className="text-white checkout-bigtitle"
+                style={{textAlign:"center"}}
+                >
+                        Thank You For Your Order!
                 </div>
-            <animated.div  style={open1}className="smallList-open"> 
                 <div className="text-white checkout-bigtitle">
                         Order Summary
                 </div>
@@ -138,47 +114,53 @@ export default function SmallCartList({ isModalVisible, toggleModal }) {
                 </div>
             ))}
             </div>
-            </animated.div>
+            <div className="smallList-notopen-con">
+                <div className="text-white checkout-bigtitle">
+                        Item Subtotal&nbsp;
+                </div>
+                <div className="text-grey checkout-bigtitle2">
+                        :&nbsp;${Math.trunc(getTotalPrice())}
+                </div>
             </div>
+            <div className="smallList-notopen-con">
+                <div className="text-white checkout-bigtitle">
+                        Delivery Fee&nbsp;
+                </div>
+                <div className="text-grey checkout-bigtitle2">
+                        :&nbsp;80
+                </div>
+            </div>
+            <div className="smallList-notopen-con">
+                <div className="text-white checkout-bigtitle">
+                        Recipent Name&nbsp;
+                </div>
+                <div className="text-grey checkout-bigtitle2">
+                :&nbsp;NAME
+                </div>
+            </div>
+            <div className="smallList-notopen-con">
+                <div className="text-white checkout-bigtitle">
+                        Recipent Address&nbsp;:
+                </div>
+            </div>
+            <div className="smallList-notopen-con">
+                <div className="text-grey checkout-bigtitle">
+                        Address&nbsp;
+                </div>
+            </div>
+            <div className="smallList-notopen-con">
+                <div className="text-white checkout-bigtitle">
+                        Recipent Phone Numbers&nbsp;:
+                </div>
+            </div>
+            <div className="smallList-notopen-con">
+                <div className="text-grey checkout-bigtitle">
+                        Address&nbsp;
+                </div>
+            </div>
+            
             <div className="smallList-bottom">
-                <div className="smallList-left">
-                    <div className="text-white smallList-input-text">
-                        CustomerInfo
-                    </div>
-                    <div className="text-white smallList-input-text">
-                        Full Name
-                    </div>
-                    <Input placeholder="Basic usage" />
-                    <div className="text-white smallList-input-text">
-                        Address
-                    </div>
-                    <Input placeholder="Basic usage" />
-                    <div className="text-white smallList-input-text">
-                        Email
-                    </div>
-                    <Input placeholder="Basic usage" />
-                    <div className="text-white smallList-input-text">
-                        Phone Number
-                    </div>
-                    <Input placeholder="Basic usage" />
-                </div>
-                <div className="smallList-right">
-                    <div className="text-white smallList-input-text">
-                        Delivery Detail
-                    </div>
-                    <div className="text-white smallList-input-text">
-                        Reciient Name
-                    </div>
-                    <Input placeholder="Basic usage" />
-                    <div className="text-white smallList-input-text">
-                    Reciient Phone Number
-                    </div>
-                    <Input placeholder="Basic usage" />
-                    <div className="text-white smallList-input-text">
-                        Reciient Address
-                    </div>
-                    <Input placeholder="Basic usage" />
-                </div>
+                
             </div>
             </div>
          )}

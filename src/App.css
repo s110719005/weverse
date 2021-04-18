@@ -241,6 +241,7 @@
   border-right-width:1px;
   border-style: solid;
   opacity: 1;
+  display: block;
 }
 
 .Navbar.active {
@@ -329,6 +330,20 @@
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
   color:white;
+}
+
+.Navbar-phone{
+  display:none;
+}
+
+/*手機選單*/
+@media (max-width: 768px){
+  .Navbar{
+    display:none
+  }
+  .Navbar-phone{
+    display:block
+  }
 }
 
 /* main Area */
@@ -856,6 +871,10 @@
   /* background-color: khaki; */
   margin-left: 5rem;
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .checkout-card3{
   background-color: var(--weverseBlack);
@@ -939,6 +958,10 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 4rem;
+  
+}
+.checkout-card2 .checkout-btn-con{
+  width:100%;
 }
 
 .checkout-next-btn1{
@@ -1039,7 +1062,35 @@
 
 .smallList-input-text{
   font-size: 14px;
+  margin:0.5rem 0rem 0.2rem 0rem;
 }
+.smallList-bottom{
+  display: flex;
+  flex-direction: row;
+}
+
+.smallList-left,.smallList-right{
+  width:45%;
+  margin:0 1rem;
+  /* background-color: #9E90F2; */
+  border:solid white 1px;
+  border-radius: 10px;
+  padding:0 1rem;
+  height:25rem;
+  margin-bottom: 1rem;
+}
+
+
+.smallList-right .ant-input,.smallList-left .ant-input{
+  background-color: transparent;
+  width:100%;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', monospace;
+  color:white;
+  margin-bottom: 0.5rem;
+}
+
+
 
 /*-------RWDRWDRWD-----------------------------o-o-o--o-o-o-o-o-*/
 
@@ -1085,6 +1136,9 @@
 .checkout .cart-item-phone{
   display:none;
 }
+
+
+
 
 
 /*手機 結帳頁*/
@@ -1205,7 +1259,7 @@
   }
   .checkout-btn-con{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width:100%;
     padding:0rem 0.8rem;
     margin-top: 0.5rem;
@@ -1247,6 +1301,36 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0.2rem;
+  }
+  .checkout-card2{
+    background-color: var(--weverseBlack);
+    /* background-color: khaki; */
+    margin-left: 5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content: flex-start;
+  }
+
+  .smallList-bottom{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    padding:0 1rem;
+    /* background-color: #8FD3F4; */
+  }
+  
+  .smallList-left,.smallList-right{
+    width:100%;
+    margin: 0;
+    /* background-color: #9E90F2; */
+    border:solid white 1px;
+    border-radius: 10px;
+    padding:0 1rem;
+    padding-bottom: 1rem;
+    height:auto;
+    margin-bottom: 1rem;
   }
   
   
