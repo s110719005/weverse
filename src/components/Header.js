@@ -50,9 +50,12 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
           <Link to="/">
             <BellOutlined className="header-icon"/ >
           </Link>
+          <div className="icon-user">
+
           <Link to="/">
             <UserOutlined className="header-icon"/ >
           </Link>
+          </div>
         </div>
 
        

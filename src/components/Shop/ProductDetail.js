@@ -262,10 +262,213 @@ function ProductDetail() {
                   ):(<><div class="productdetail-card"></div></>)}
                </>
                </animated.div>
+               <animated.div  class="productdetail-card-phone" style={{ opacity: opacity.interpolate(o => 1 - o), transform }}>
+                  <>
+                     {flipped ? (<><div class="productdetail-card"></div></>
+                     ):(
+                        <>
+                           <div class="productdetail-card2" ></div>
+                              <div class="productdetail-card1">
+                              
+                                 <animated.div
+                                       class="card"
+                                       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+                                       onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                                       style={{ transform: props.xys.interpolate(trans) }}
+                                    >
+                                       <img
+                                          alt=""
+                                          className="product-image"
+                                          src={product.image[productType]}
+                                       />
+                                    </animated.div>
+                                 <div className="product-type-imagecon">
+                                    {[...Array(product.typeNum).keys()].map((x) => (
+                                      <>
+                                      {!typeOpa[x] ? (
+                                         <>
+                                          <img
+                                             alt=""
+                                             className="product-type-image"
+                                             src={product.image[x]}
+                                             onClick={() => {
+                                                setProductType(x);
+                                                //setTypeOpa([!typeOpa[0],!typeOpa[1],!typeOpa[2]]);
+                                             }}
+                                          />
+                                         </>
+                                      ):(
+                                         <>
+                                         <img
+                                             alt=""
+                                             className="product-type-image-opa"
+                                             src={product.image[x]}
+                                             onClick={() => {
+                                                setProductType(x);
+                                                //setTypeOpa([!typeOpa[0],!typeOpa[1],!typeOpa[2]]);
+                                             }}
+                                          />
+                                          
+                                         </>
+                                      )}
+                                   </>
+                                      
+
+                                          
+                                       ))}
+                                    </div>
+                                    <div className="text-white productdetail-card1-name">
+                                       {product.name}
+                                    </div>
+                                    <div className="text-grey productdetail-card1-dis">
+                                       {product.discription}
+                                    </div>
+                                    <div className="text-purple productdetail-button-flip"
+                                       onClick={() => setFlipped(!flipped)}
+                                    >
+                                       More Info...
+                                    </div>
+                                    <div className="productdetail-card1-select-con">
+                                       <div
+                                       style={{marginRight:"1rem"}}
+                                       >
+                                          <div className="text-white productdetail-card1-type">
+                                             Type
+                                          </div>
+                                          <Select defaultValue={"None"}
+                                             value={typ}
+                                             style={{ 
+                                                width: 120, 
+                                                borderRadius:"50px",
+                                             }} 
+                                             onChange={handleChange}
+                                             onChange={val => {setProductDetail(dispatch, product.id, qty,product.type[val],val);
+                                                console.log(val);
+                                             }}
+                                             
+                                          >
+                                             {[...Array(product.typeNum).keys()].map((x) => (
+                                                <Option key={x + 1} value={x}>{product.type[x]}</Option>
+                                             ))}
+                                             
+                                          </Select>
+                                       </div>
+                                       <div>
+                                          <div className="text-white productdetail-card1-type">
+                                             Amount
+                                          </div>
+                                          <Select defaultValue={qty}
+                                             value={qty}
+                                             style={{ 
+                                                width: 120, 
+                                                borderRadius:"50px",
+                                             }} 
+                                             onChange={handleChange}
+                                             onChange={val => {setProductDetail(dispatch, product.id, val,typ,typNum);
+                                             console.log(val);
+                                             }}
+                                          >
+                                             {[...Array(product.countInStock).keys()].map((x) => (
+                                                <Option key={x + 1} value={x+1}>{x+1}</Option>
+                                             ))}
+                                             
+                                          </Select>
+                                       </div>
+                                    </div>
+                                    <div>
+                                       <div className="text-white productdetail-card1-type">
+                                          Price
+                                       </div>
+                                       <div className="text-white productdetail-card1-price">
+                                          $ {Math.trunc(product.price * qty)}
+                                          
+                                       </div>
+                                       {/* <div className="text-white">
+                                       {typ}
+                                       </div> */}
+                                    </div>
+                                    
+                                    <AddToCart/>
+                                 
+                                 
+                           </div>
+                        </>
+                     )}
+                  </>
+               </animated.div>
+
+               <animated.div class="productdetail-card-phone" style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(-180deg)`) }}>
+               <>
+                  {flipped ? (
+                     <>
+                        <div class="productdetail-card1-back"></div>
+                        <div class="productdetail-card2-back">
+                        <animated.div
+                                 class="card2"
+                                 onMouseMove={({ clientX: x, clientY: y }) => set2({ xys: calc2(x, y) })}
+                                 onMouseLeave={() => set2({ xys: [0, 0, 1] })}
+                                 style={{ transform: props2.xys.interpolate(trans2) }}
+                              >
+                                 <img
+                                    alt=""
+                                    className="product-image"
+                                    src={product.image[productType]}
+                                 />
+
+                              </animated.div>
+                              <div className="product-type-imagecon">
+                              {[...Array(product.typeNum).keys()].map((x) => (
+                                    <img
+                                             alt=""
+                                             className="product-type-image"
+                                             src={product.image[x]}
+                                             onClick={() => setProductType(x)}
+                                          />
+                                 ))}
+                              </div>
+                           <div className="productdetail-card2-left2">
+                              <div className="text-white productdetail-card2-name">
+                                 {product.name}
+                              </div>
+                              <div className="productdetail-card2-info">
+                                 <div className="text-white productdetail-card2-info-topic">
+                                    Overview
+                                 </div>
+                                 <div className="text-grey productdetail-card2-info-text">
+                                    {product.overview}
+                                 </div>
+                                 <div className="text-white productdetail-card2-info-topic">
+                                    Material
+                                 </div>
+                                 <div className="text-grey productdetail-card2-info-text">
+                                    {product.Material}
+                                 </div>
+                                 <div className="text-white productdetail-card2-info-topic">
+                                    Product Size
+                                 </div>
+                                 <div className="text-grey productdetail-card2-info-text">
+                                    {product.ProductSize}
+                                 </div>
+                              </div>
+                              <div className="productdetail-button-flip"
+                                 onClick={() => setFlipped(!flipped)}
+                              >
+                                 I want it...
+                              </div>
+                           </div>
+                           <div className="productdetail-card2-right">
+                              
+                           </div>
+                           
+                        </div>
+                     </>
+                  ):(<><div class="productdetail-card"></div></>)}
+               </>
+               </animated.div>
                
             </div>
             <div className="mainarea-topic-text">
-                Weverse Shop
+               Recommend for you
             </div>
             
             

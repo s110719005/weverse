@@ -5,6 +5,7 @@ import WeverseNavbar from "../components/Navbar/Navbar";
 import ProductDetail from "../components/Shop/ProductDetail";
 import { setProductDetail } from "../actions";
 import { StoreContext } from "../store";
+import NavbarPhone from "../components/Navbar/NavbarPhone";
 
 //import { StoreContext } from "../store"
 
@@ -16,6 +17,9 @@ function ProductDetailPage({ match }) {
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
     <Layout className="container main-layout">
+      <Layout>
+          <NavbarPhone isNavBarVisible={!isNavBarVisible}/>
+      </Layout>
       <WeverseHeader setIsNavBarVisible={setIsNavBarVisible} isNavBarVisible={isNavBarVisible}/>
       <Layout className="layout-content">
           <WeverseNavbar isNavBarVisible={isNavBarVisible}/>
