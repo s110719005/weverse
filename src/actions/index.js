@@ -8,19 +8,47 @@ import {
 
   import products from "../json/btsProducts.json";
 
-  export const setProductDetail = (dispatch, productId, qty) => {
+  export const addCartItem = (dispatch, product, qty,typ,typNum) => {
+    const item = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      countInStock: product.countInStock,
+      qty,
+      typ,
+      typNum
+    };
+    dispatch({
+      type: ADD_CART_ITEM,
+      payload: item,
+    });
+  };
+
+  export const removeCartItem = (dispatch, productId) => {
+    dispatch({
+      type: REMOVE_CART_ITEM,
+      payload: productId,
+    });
+  };
+
+  export const setProductDetail = (dispatch, productId, qty,typ,typNum) => {
     const product = products.find(
       x => x.id === productId
     );
     
     if(qty === 0 && product.countInStock > 0)
         qty = 1;
-  
+     if(typ==="") typ="None";
+     
+     
     dispatch({
       type: SET_PRODUCT_DETAIL,
       payload: {
         product,
         qty,
+        typ,
+        typNum
       }
     })
   }

@@ -4,6 +4,7 @@ import { ShoppingOutlined,MenuOutlined,BellOutlined,UserOutlined,MenuFoldOutline
 import { CartIcon } from "./Icons";
 
 import { StoreContext } from "../store";
+import CartSummary from "./Shop/CartSummary";
 //import CartSummary from "./CartSummary";
 //import { pageContentsSet, activeNavItemSet } from "../actions";
 //import { getJSON } from "../api";
@@ -43,10 +44,9 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
         <div className="header-wrap-middle" visible={isOnTouch}>
           Weverse
         </div>  
+        
         <div className="header-wrap-right">
-          <Link to="/">
-            <ShoppingOutlined className="header-icon"/ >
-          </Link>
+          <CartSummary/>
           <Link to="/">
             <BellOutlined className="header-icon"/ >
           </Link>
@@ -54,6 +54,8 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
             <UserOutlined className="header-icon"/ >
           </Link>
         </div>
+
+       
             
       </div>
       <hr className="hr-header-line" />

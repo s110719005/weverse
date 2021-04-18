@@ -1,16 +1,18 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import './App.css';
-import Home from './pages/Home'
+import Shop from './pages/Shop'
 import ProductDetail from "./pages/ProductDetailPage";
 import { StoreProvider } from "./store";
+import CheckOut from './pages/CheckOut';
 
 function App() {
   return (
      <StoreProvider>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Shop} />
+          <Route exact path="/CheckOut" component={CheckOut} />
           <Route path="/product/:productId" component={ProductDetail} />
           {/* <Route exact path="/shoppingCart" component={ShoppingCart} />
           <Route exact path="/:pageName" component={Home} />
