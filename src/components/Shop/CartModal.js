@@ -35,10 +35,20 @@ export default function CartModal({ isModalVisible, toggleModal }) {
             marginRight:"8rem"
          }}
       >
+         <div>
          {cartItems.length === 0 ? (
-            <div>Cart is empty</div>
+            <div className="text-white">
+               Cart is empty
+               <div className="text-white cart-check btn-hover-white">
+                  <Link to="/">
+                     Go to Shop
+                  </Link>
+                  
+               </div>
+            </div>
          ) : (
-            cartItems.map(item => (
+            <div>
+            {cartItems.map(item => (
                <li key={item.id} className="cart-item">
                   <Link to={`/product/${item.id}`}>
                      <div className="cart-image" onClick={()=>{
@@ -70,7 +80,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                               
                               </div>
                            <div className="text-grey cart-price">
-                           &nbsp; = ${Math.trunc(item.price * item.qty)}
+                           &nbsp;= ${Math.trunc(item.price * item.qty)}
                            </div>
                         </div>
                      </div>
@@ -83,17 +93,20 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                   
 
                </li>
-            ))
-         )}
-         <div className="text-white cart-total-price-wrap">
-            Total&nbsp;
-            <div className="cart-total-price">${Math.trunc(getTotalPrice())}</div>
+            ))}
+               <div className="text-white cart-total-price-wrap">
+                  Total&nbsp;
+                  <div className="cart-total-price">${Math.trunc(getTotalPrice())}</div>
+               </div>
+            <div className="text-white cart-check btn-hover-white">
+                  <Link to="/CheckOut">
+                     Check Out
+                  </Link>
+                  
+            </div>
          </div>
-         <div className="text-white cart-check btn-hover-white">
-               <Link to="/CheckOut">
-                  Check Out
-               </Link>
-               
+         )}
+         
          </div>
       </Modal>
    );
