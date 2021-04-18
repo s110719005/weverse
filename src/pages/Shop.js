@@ -2,13 +2,13 @@ import { useContext,useState } from "react";
 import { Layout } from 'antd';
 import WeverseHeader from "../components/Header";
 import WeverseNavbar from "../components/Navbar/Navbar";
-import MainArea from "../components/MainArea";
+import MainArea from "../components/Shop/MainArea";
 
 //import { StoreContext } from "../store"
 
 const { Header, Content, Footer } = Layout;
 
-function Home() {
+function Shop() {
   //const { state: { page: { title, products } } } = useContext(StoreContext);
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
@@ -22,4 +22,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Shop;

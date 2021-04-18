@@ -9,6 +9,7 @@ export default function ProductItem({ product }) {
                     style={{ width: '100%' }}
                     src={product.image[1]}
                     alt={product.name} />
+                
             </Link>
             <div className="product-name">
                     {product.name}
