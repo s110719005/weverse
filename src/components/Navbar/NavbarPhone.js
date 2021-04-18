@@ -10,57 +10,38 @@ import {useSpring, animated} from 'react-spring'
 
 
 
-const NavbarItem = () => {
-    return (
-       
-        <div className="Navbar">
 
 
-            <PageList/>
-            <div className="navbar-line"> </div>
-            <ArtistList />
-            <div className="navbar-line"></div>
-            <WeverseFooter/>
-        </div>
 
-        
-    );
-}
-
-
-export default function Navbar({isNavBarVisible}) {
+export default function NavbarPhone({isNavBarVisible}) {
     const [isOnTouch, setIsOnTouch] = useState(false);
     const handleCloseDrawer = () => setIsOnTouch(false);
     const closeNav = useSpring({
         // from: { opacity: 0 },
         // to: { opacity: 1 }
-        opacity: !isNavBarVisible?0.5:1,
+        //opacity: !isNavBarVisible?0.5:1,
+        paddingTop:!isNavBarVisible?"0rem":"1.5rem",
+        paddingbottom:!isNavBarVisible?"0px":"100px",
+       // marginTop:!isNavBarVisible?"0rem":"70px",
         borderColor:!isNavBarVisible?"#2e2e2e":"white",
-        width:!isNavBarVisible?"0rem":"15rem",
+        height:!isNavBarVisible?"0vh":"100vh",
         paddingLeft: !isNavBarVisible?"0rem":"1.5rem",
         paddingRight: !isNavBarVisible?"0rem":"1.5rem",
       });
     return (
-        // <Spring
-        //   to={{
-        //     left: isNavBarVisible ? '0px' : '-200px',
-        //     opacity: isNavBarVisible ? 1 : 0
-        //   }}
-        //   children={NavbarItem}
-        // />
-
-        //style={closeNav}
+        
         <div>
-            <animated.div  style={closeNav} className="Navbar">
+            {/* style={closeNav} */}
+            <animated.div  style={closeNav} className="Navbar-phone">
 
                 {isNavBarVisible ? true : false }
+                
                 <PageList/>
                 <div className="navbar-line"> </div>
                 <ArtistList />
                 <div className="navbar-line"></div>
                 <WeverseFooter/>
             </animated.div>
-            
         </div>
 
         

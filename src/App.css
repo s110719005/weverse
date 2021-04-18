@@ -334,15 +334,113 @@
 
 .Navbar-phone{
   display:none;
+  
 }
+
+
+
 
 /*手機選單*/
 @media (max-width: 768px){
   .Navbar{
-    display:none
+    display:none;
   }
   .Navbar-phone{
-    display:block
+    display:block;
+    position: fixed;
+  background-color: var(--weverseBlack);
+  width:100vw;
+  height:20rem;
+  z-index: 3;
+  margin-top: 70px; 
+  /* 
+  padding-top: 90px;
+  padding-bottom: 100px; */
+  overflow: auto;
+  }
+  
+  
+  .Navbar.active {
+    width :0;
+    overflow: hidden;
+    transition: 350ms;
+  }
+  
+  .navnar-pagelist{
+    padding-left:1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .navbar-pagelist-text{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  
+  .navbar-line{
+    height:0.1px;
+    min-height: 0.1px;
+    width:100%;
+    background-color: white;
+    margin-top:2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .navbar-artistlist{
+    width:100%;
+    padding-left:0rem;
+  }
+  
+  .navbar-artistlist-text{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color:white;
+  }
+  
+  .navbar-artistlist-topic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:0.5rem;
+    padding-left: 1rem;
+  }
+  
+  .navbar-artistname-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:0.5rem;
+    margin:0.5rem;
+    padding-left: 1rem;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+  }
+  .navbar-artistname-container:hover{
+    background-color: rgba(158, 144, 242, 0.2); 
+  }
+  
+  .navbar-artistlist-thumbnail{
+    width:25px;
+    height:25px;
+    border-radius: 25px;
+    
+    margin-right: 0.5rem;
+  }
+  
+  .navbar-footer{
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .navbar-footer-text{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    color:white;
   }
 }
 
@@ -529,6 +627,10 @@
   border-radius: 10px;
   position: absolute;
   
+}
+
+.ant-card-body{
+  padding:0;
 }
 
 

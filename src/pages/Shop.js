@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import WeverseHeader from "../components/Header";
 import WeverseNavbar from "../components/Navbar/Navbar";
 import MainArea from "../components/Shop/MainArea";
+import NavbarPhone from "../components/Navbar/NavbarPhone";
 
 //import { StoreContext } from "../store"
 
@@ -13,11 +14,15 @@ function Shop() {
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
     <Layout className="container main-layout">
+      <Layout>
+          <NavbarPhone isNavBarVisible={!isNavBarVisible}/>
+      </Layout>
       <WeverseHeader setIsNavBarVisible={setIsNavBarVisible} isNavBarVisible={isNavBarVisible}/>
       <Layout className="layout-content">
           <WeverseNavbar isNavBarVisible={isNavBarVisible}/>
           <MainArea isNavBarVisible={isNavBarVisible}/>
       </Layout>
+      
     </Layout>
   );
 }
