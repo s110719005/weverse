@@ -60,3 +60,9 @@ import {
     });
   };
  
+  export const activeNavItemSet = (dispatch, activeNavItem) => {
+    dispatch({
+      type: SET_NAVBAR_ACTIVEITEM,
+      payload: activeNavItem,
+    });
+  };

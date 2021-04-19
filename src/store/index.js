@@ -30,6 +30,9 @@ import {
     typNum:0
   },
   cartItems,
+  navBar: {
+    activeItem: "/",
+  },
   
 };
 
@@ -55,6 +58,13 @@ function reducer(state, action) {
       return {
         ...state,
         page: action.payload,
+      };
+    case SET_NAVBAR_ACTIVEITEM:
+      return {
+        ...state,
+        navBar: {
+          activeItem: action.payload,
+        },
       };
     case SET_PRODUCT_DETAIL:
       return { ...state, productDetail: action.payload };

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Drawer } from "antd";
 import { Link } from "react-router-dom";
-import thumbnail1 from "../img/thumbnail/01.jpg"
+import thumbnail1 from "../img/thumbnail/01.jpg";
+import NavItem from "./NavItem";
 
 export default function ArtistList() {
     const [isOnTouch, setIsOnTouch] = useState(false);
@@ -11,72 +12,39 @@ export default function ArtistList() {
             <div className="navbar-artistlist-topic navbar-artistlist-text">
                 Artist 
             </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
+            <NavItem to="/Shop" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+                <div className="navbar-artistname-container">
+                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <div className="navbar-artistlist-text">
+                            BTS
+                        </div>
                 </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
+            </NavItem>
+            <NavItem to="/txt" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+                <div className="navbar-artistname-container">
+                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <div className="navbar-artistlist-text">
+                            TXT
+                        </div>
                 </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
+            </NavItem>
+            <NavItem to="/gfriend" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+                <div className="navbar-artistname-container">
+                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <div className="navbar-artistlist-text">
+                            Gfriend
+                        </div>
                 </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
+            </NavItem>
+            <NavItem to="/seventeen" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+                <div className="navbar-artistname-container">
+                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <div className="navbar-artistlist-text">
+                            Seventeen
+                        </div>
                 </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
-           <div className="navbar-artistname-container">
-                <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
-                <div className="navbar-artistlist-text">
-                    BTS
-                </div>
-           </div>
+            </NavItem>
+           
             
             
             

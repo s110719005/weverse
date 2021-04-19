@@ -14,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Shop" component={Shop} />
+          <Route exact path="/:pageName" component={Shop} />
           <Route exact path="/CheckOut" component={CheckOut} />
           <Route path="/product/:productId" component={ProductDetail} />
           {/* <Route exact path="/shoppingCart" component={ShoppingCart} />
