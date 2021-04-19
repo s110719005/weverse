@@ -34,7 +34,7 @@ function MainArea({isNavBarVisible}) {
       const [isPage1, setIsPage1] = useState(true);
       const [isPage2, setIsPage2] = useState(true);
       const dropped = useSpring({
-        marginTop:isPage1?"3rem":"60rem",
+        marginTop:isPage1?"3rem":"100vh",
         marginRight:isPage1?"0rem":"20rem",
      });
       const dropped2 = useSpring({

@@ -1,3 +1,4 @@
+// @refresh reset
 import { Modal, Button, Select,Row ,Input} from "antd";
 import { useEffect, useContext,useState } from "react";
 import { Link } from "react-router-dom";
@@ -40,7 +41,7 @@ export default function SmallCartList({ isModalVisible, toggleModal }) {
             <div className="smallList">
             <div className="smallList-notopen">
                 <div className="smallList1">
-                    <div className="smallList-">
+                    <div className="smallList-top">
                         <div className="smallList-notopen-con">
                             <div className="text-white checkout-bigtitle">
                                     Order Total&nbsp;
