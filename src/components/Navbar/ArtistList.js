@@ -3,7 +3,6 @@ import { Drawer } from "antd";
 import { Link } from "react-router-dom";
 import thumbnail1 from "../img/thumbnail/01.jpg";
 import NavItem from "./NavItem";
-
 export default function ArtistList() {
     const [isOnTouch, setIsOnTouch] = useState(false);
     const handleCloseDrawer = () => setIsOnTouch(false);
@@ -14,7 +13,7 @@ export default function ArtistList() {
             </div>
             <NavItem to="/Shop" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
-                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_bts.jpeg?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
                             BTS
                         </div>
@@ -22,7 +21,7 @@ export default function ArtistList() {
             </NavItem>
             <NavItem to="/txt" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
-                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_txt.jpeg?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
                             TXT
                         </div>
@@ -30,7 +29,7 @@ export default function ArtistList() {
             </NavItem>
             <NavItem to="/gfriend" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
-                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_gfriend.jpeg?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
                             Gfriend
                         </div>
@@ -38,7 +37,7 @@ export default function ArtistList() {
             </NavItem>
             <NavItem to="/seventeen" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
-                        <img src={thumbnail1} alt="Background" className="navbar-artistlist-thumbnail"/>
+                        <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_seventeen.png?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
                             Seventeen
                         </div>
