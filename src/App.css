@@ -42,6 +42,13 @@ body{
   background-color: var(--weverseBlack);
 }
 
+html,
+body {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
 /* RWD Container */
 .container {
     width: 100vw; 
@@ -523,6 +530,7 @@ body{
   padding:7rem;
   padding-top: 0rem;
   overflow: auto;
+  overflow: scroll;
 }
 
 .mainarea-topic-text{
@@ -1014,7 +1022,7 @@ body{
 
 .checkout-card-con{
   width:80%;
-  height:80vh;
+  height:40rem;
   display: flex;
   justify-content: center;
   /* background-color: coral; */
