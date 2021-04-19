@@ -22,7 +22,7 @@ export default function PageList() {
                     Media
                 </div>
             </Link>
-            <Link to="/">
+            <Link to="/Shop">
                 <div className="navbar-pagelist-text">
                     Shop
                 </div>

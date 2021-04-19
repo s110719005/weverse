@@ -14,9 +14,7 @@ function Shop() {
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
     <Layout className="container main-layout">
-      <Layout>
-          <NavbarPhone isNavBarVisible={!isNavBarVisible}/>
-      </Layout>
+      <NavbarPhone isNavBarVisible={!isNavBarVisible}/>
       <WeverseHeader setIsNavBarVisible={setIsNavBarVisible} isNavBarVisible={isNavBarVisible}/>
       <Layout className="layout-content">
           <WeverseNavbar isNavBarVisible={isNavBarVisible}/>

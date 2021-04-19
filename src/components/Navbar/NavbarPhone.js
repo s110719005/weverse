@@ -21,7 +21,7 @@ export default function NavbarPhone({isNavBarVisible}) {
         // to: { opacity: 1 }
         //opacity: !isNavBarVisible?0.5:1,
         paddingTop:!isNavBarVisible?"0rem":"1.5rem",
-        paddingbottom:!isNavBarVisible?"0px":"100px",
+        //paddingbottom:!isNavBarVisible?"0px":"100px",
        // marginTop:!isNavBarVisible?"0rem":"70px",
         borderColor:!isNavBarVisible?"#2e2e2e":"white",
         height:!isNavBarVisible?"0vh":"100vh",

@@ -5,13 +5,15 @@ import Shop from './pages/Shop'
 import ProductDetail from "./pages/ProductDetailPage";
 import { StoreProvider } from "./store";
 import CheckOut from './pages/CheckOut';
+import Home from './pages/Home';
 
 function App() {
   return (
      <StoreProvider>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Shop} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Shop" component={Shop} />
           <Route exact path="/CheckOut" component={CheckOut} />
           <Route path="/product/:productId" component={ProductDetail} />
           {/* <Route exact path="/shoppingCart" component={ShoppingCart} />

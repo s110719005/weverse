@@ -277,7 +277,7 @@
     /* color: black; */
   }
   .header-icon:hover{
-    height:70px;
+    /* height:70px; */
     display: flex;
     align-items: center;
     font-size: 24px;
@@ -411,12 +411,12 @@
     position: fixed;
   background-color: var(--weverseBlack);
   width:100vw;
-  height:20rem;
+  /* height:20rem; */
   z-index: 3;
   margin-top: 70px; 
-  /* 
-  padding-top: 90px;
-  padding-bottom: 100px; */
+  
+  /* padding-top: 70px; */
+  /* padding-bottom: 100px; */
   overflow: auto;
   }
   
@@ -1004,7 +1004,7 @@
 
 .checkout-card-con{
   width:80%;
-  height:40rem;
+  height:80vh;
   display: flex;
   justify-content: center;
   /* background-color: coral; */
@@ -1270,6 +1270,49 @@
   margin-bottom: 0.5rem;
 }
 
+.carousel-artists{
+  width:100%;
+  height:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.carousel-artists-img-con{
+  width:30%;
+  height:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.carousel-artists-name{
+  font-size: 18px;
+  width:100%;
+  height:5rem;
+  text-align: left;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+}
+.carousel-newContent .carousel-artists{
+  width:100%;
+  height:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.carousel-newContent .carousel-artists-img-con{
+  width:100%;
+  height:25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+
+
+
+
 
 
 /*-------RWDRWDRWD-----------------------------o-o-o--o-o-o-o-o-*/
@@ -1327,7 +1370,7 @@
   
   .checkout-card-con{
     /* background-color: lightgoldenrodyellow; */
-    height:100vh;
+    height:80vh;
    
     justify-content: flex-start;
   }
