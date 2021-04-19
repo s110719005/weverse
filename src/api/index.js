@@ -11,7 +11,7 @@ export const getArtistJSON = (url) => {
       return txt;
     case "/gfriend":
       return gfriend;
-    case "/Seventeen":
+    case "/seventeen":
       return seventeen;
     
     default:

@@ -5,12 +5,12 @@ import WeverseNavbar from "../components/Navbar/Navbar";
 import MainArea from "../components/Shop/MainArea";
 import NavbarPhone from "../components/Navbar/NavbarPhone";
 
-//import { StoreContext } from "../store"
+import { StoreContext } from "../store"
 
 const { Header, Content, Footer } = Layout;
 
 function Shop() {
-  //const { state: { page: { title, products } } } = useContext(StoreContext);
+  const { state: { page: { title, products } } } = useContext(StoreContext);
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   return (
     <Layout className="container main-layout">

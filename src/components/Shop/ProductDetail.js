@@ -65,7 +65,7 @@ function ProductDetail() {
                                        {product.name}
                                     </div>
                                     <div className="text-white productdetail-card1-overview">
-                                       {product.discription}
+                                       {product.description}
                                     </div>
                                     <div className="text-purple productdetail-button-flip"
                                        onClick={() => setFlipped(!flipped)}
@@ -321,7 +321,7 @@ function ProductDetail() {
                                        {product.name}
                                     </div>
                                     <div className="text-grey productdetail-card1-dis">
-                                       {product.discription}
+                                       {product.description}
                                     </div>
                                     <div className="text-purple productdetail-button-flip"
                                        onClick={() => setFlipped(!flipped)}

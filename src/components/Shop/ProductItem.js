@@ -16,7 +16,7 @@ export default function ProductItem({ product }) {
             </div>
             <span
                 className="product-price">
-                USD {product.price}.00
+                USD {product.price}
             </span>
             {/* <div className="product-info">
                 <h6 className="product-category">

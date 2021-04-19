@@ -38,13 +38,17 @@
   background-color: rgba(158,144,242,0.2);
 }
 
+body{
+  background-color: var(--weverseBlack);
+}
+
 /* RWD Container */
 .container {
     width: 100vw; 
     display: flex;
     align-self: center;
     margin: auto;
-    background-color: white;
+    background-color: var(--weverseBlack);
 }
 
 /* sm */

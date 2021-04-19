@@ -25,8 +25,8 @@ function MainArea({isNavBarVisible}) {
     const closeNav = useSpring({
         // from: { opacity: 0 },
         // to: { opacity: 1 }
-        paddingLeft: !isNavBarVisible?"7rem":"3rem",
-        paddingRight: !isNavBarVisible?"7rem":"3rem",
+        paddingLeft: !isNavBarVisible?"5rem":"3rem",
+        paddingRight: !isNavBarVisible?"5rem":"3rem",
       });
     return (
         <animated.div  style={closeNav} className="mainarea">
