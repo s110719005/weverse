@@ -12,6 +12,13 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
+import {
+  pageCache,
+  imageCache,
+  staticResourceCache,
+  googleFontsCache,
+  offlineFallback,
+} from 'workbox-recipes';
 
 clientsClaim();
 
@@ -60,7 +67,15 @@ registerRoute(
     ],
   })
 );
+pageCache();
 
+googleFontsCache();
+
+staticResourceCache();
+
+imageCache();
+
+offlineFallback();
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
 self.addEventListener('message', (event) => {
