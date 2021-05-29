@@ -1,5 +1,6 @@
 import { createContext,useReducer } from "react";
 import products from "../json/btsProducts.json";
+import useReducerWithThunk from "use-reducer-thunk";
 
 import {
   SET_PAGE_CONTENT,
@@ -75,7 +76,11 @@ function reducer(state, action) {
 
 
 export function StoreProvider(props) {
-  const [state, dispatch] = useReducer(reducer,initialState);
+  const [state, dispatch] = useReducerWithThunk(
+    reducer,
+    initialState,
+    "example"
+  );
   const value = { state, dispatch };
 
   return (
