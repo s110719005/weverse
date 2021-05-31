@@ -134,7 +134,7 @@ function ProductDetail() {
                                        <div className="text-white productdetail-card1-type">
                                           Type
                                        </div>
-                                       <Select defaultValue={"None"}
+                                       <Select defaultValue={0}
                                           value={typ}
                                           style={{ 
                                              width: 150, 

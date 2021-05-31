@@ -1,0 +1,11 @@
+.feed-btn{
+    background-color: var(--weversePurple);
+    height:10rem;
+    width:20rem;
+    margin-left:20rem;
+    margin-top:10rem;
+    text-align: center;
+    line-height: 10rem;;
+    font-size: 3rem;
+    cursor: pointer;
+}

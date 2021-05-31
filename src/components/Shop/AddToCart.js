@@ -21,6 +21,7 @@ export default function AddToCart() {
 
   const addToCart = () => {
     // openNotification();
+    //console.log(typ);
     addCartItem(dispatch, product, qty,typ,typNum);
   };
 

@@ -70,6 +70,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                                     value={item.qty}
                                     className="select-style"
                                     onChange={(qty) => addCartItem(dispatch, item, qty,item.typ,item.typNum)}
+                                    //onChange={(qty) => setProductDetail(dispatch, item, qty,item.typ,item.typNum)} 
                                  >
                                     {[...Array(item.countInStock).keys()].map((x) => (
                                        <Option key={x + 1} value={x + 1}>

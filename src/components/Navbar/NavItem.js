@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../store";
-import { pageContentsSet, activeNavItemSet } from "../../actions";
+import { setPage, activeNavItemSet } from "../../actions";
 import { getArtistJSON } from "../../api";
 
 export default function NavItem(props) {
@@ -9,7 +9,7 @@ export default function NavItem(props) {
   const { state, dispatch } = useContext(StoreContext);
 
   const onClick = () => {
-   pageContentsSet(dispatch, children, getArtistJSON(to));
+    setPage(dispatch, to, children);
    activeNavItemSet(dispatch, to);
   };
   

@@ -7,9 +7,12 @@ export default function Footer() {
     const handleCloseDrawer = () => setIsOnTouch(false);
     return (
         <div className="navbar-footer">
-            <div className="navbar-footer-text">
-            © WEVERSE COMPANY Inc.
-            </div>
+            <Link to="/Feeder">
+                <div className="navbar-footer-text">
+                © WEVERSE COMPANY Inc.
+                </div>
+            </Link>
+            
            
             
             

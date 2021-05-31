@@ -6,6 +6,7 @@ import ProductDetail from "./pages/ProductDetailPage";
 import { StoreProvider } from "./store";
 import CheckOut from './pages/CheckOut';
 import Home from './pages/Home';
+import Feeder from './pages/Feeder';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Shop" component={Shop} />
+          <Route exact path="/Feeder" component={Feeder} />
           <Route exact path="/CheckOut" component={CheckOut} />
           <Route exact path="/:pageName" component={Shop} />
           <Route path="/product/:productId" component={ProductDetail} />

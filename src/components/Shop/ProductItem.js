@@ -1,10 +1,18 @@
+import { useContext } from "react";
 import { Card } from "antd"
 import { Link } from 'react-router-dom';
+import { StoreContext } from "../../store"
+import { setProductDetail } from "../../actions";
 
 export default function ProductItem({ product }) {
+    const { dispatch } = useContext(StoreContext);
     return (
         <Card className="mainarea-product">
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/${product.id}`}
+                onClick={()=>{
+                    setProductDetail(dispatch, product.id, 1,0,0);
+                }}
+            >
                 <img
                     style={{ width: '100%' }}
                     src={product.image[1]}

@@ -27,7 +27,7 @@ import {
       type:[]
     },
     qty: 1,
-    typ: "None",
+    typ: "",
     typNum:0
   },
   cartItems,
