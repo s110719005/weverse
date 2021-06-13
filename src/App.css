@@ -1,5 +1,7 @@
 @import '~antd/dist/antd.css';
 @import './css/Feed.css';
+@import './css/Login.css';
+@import './css/Register.css';
 
 :root {
   --weverseGreen: #84FAB0;
