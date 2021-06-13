@@ -11,7 +11,7 @@ export default function ArtistList() {
             <div className="navbar-artistlist-topic navbar-artistlist-text">
                 Artist 
             </div>
-            <NavItem to="/Shop" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+            <NavItem to="/Shop/BTS" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
                         <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_bts.jpeg?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
@@ -19,7 +19,7 @@ export default function ArtistList() {
                         </div>
                 </div>
             </NavItem>
-            <NavItem to="/txt" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+            <NavItem to="/Shop/txt" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
                         <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_txt.jpeg?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
@@ -27,7 +27,7 @@ export default function ArtistList() {
                         </div>
                 </div>
             </NavItem>
-            <NavItem to="/gfriend" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+            <NavItem to="/Shop/gfriend" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
                         <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_gfriend.jpeg?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">
@@ -35,7 +35,7 @@ export default function ArtistList() {
                         </div>
                 </div>
             </NavItem>
-            <NavItem to="/seventeen" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
+            <NavItem to="/Shop/seventeen" className="navbar-artistname-container-inactive" activeClassName="navbar-artistname-container-active">
                 <div className="navbar-artistname-container">
                         <img src="https://github.com/unbeliebubble/img/blob/main/artist_logo/logo_seventeen.png?raw=true" alt="Background" className="navbar-artistlist-thumbnail"/>
                         <div className="navbar-artistlist-text">

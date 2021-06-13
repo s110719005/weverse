@@ -56,7 +56,7 @@ function MainArea({isNavBarVisible}) {
                 BTS
             </div>
             <div className="mainarea-productlist-container">
-                <ProductList products={products}/>
+                <ProductList/>
             </div>
             
        

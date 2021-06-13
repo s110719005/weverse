@@ -1,0 +1,39 @@
+.signup-input-title{
+    width:80%;
+    margin:1rem 10%;
+    text-align: left;
+    
+}
+
+.signup-title{
+    font-size: 24px;
+    margin-bottom: 2rem;
+    margin-top:2rem;
+}
+
+.signup-step-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.signup-step-circle{
+    line-height: 2.5rem;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius: 2.5rem;
+    border: 1px solid var(--weverseGreen);
+    color:white;
+}
+.signup-step-line{
+    line-height: 2.5rem;
+    height:2.5rem;
+    color:var(--weverseGreen);
+}
+
+.signup-step1-container{
+    margin-top: 2rem;
+    /* height:16rem; */
+    /* background-color: salmon; */
+    align-items: center;
+}

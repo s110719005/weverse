@@ -1,6 +1,6 @@
 import { Modal, Button, Select } from "antd";
 import { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { StoreContext } from "../../store"
 import { CartIcon } from "../Icons";
 import { addCartItem, removeCartItem, setProductDetail } from "../../actions";
@@ -8,11 +8,17 @@ const { Option } = Select;
 
 export default function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
+   const history = useHistory();
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
+   }
+
+   const checkoutHandler = () => {
+      handleCancel();
+      history.push("/Login?redirect=CheckOut");
    }
 
    useEffect(() => {
@@ -100,9 +106,9 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                   <div className="cart-total-price">${Math.trunc(getTotalPrice())}</div>
                </div>
             <div className="text-white cart-check btn-hover-white">
-                  <Link to="/CheckOut">
+                  <div onClick={checkoutHandler}>
                      Check Out
-                  </Link>
+                  </div>
                   
             </div>
          </div>
