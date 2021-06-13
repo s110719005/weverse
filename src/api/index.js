@@ -87,3 +87,26 @@ export const getProductById = async (productId) => {
 }
 
 
+
+export const signInWithEmailPassword = async (email, password) => {
+  return await auth.signInWithEmailAndPassword(email, password);
+}
+
+export const registerWithEmailPassword = async (email, password, name) => {
+  await auth.createUserWithEmailAndPassword(email, password);
+  const user = auth.currentUser;
+  await user.updateProfile({
+    displayName: name,
+  })
+  return user;
+}
+
+export const signOut = () => {
+  auth.signOut();
+}
+
+export const checkLoginApi = () => {
+  const user = auth.currentUser;
+  return user.uid?  true : false;
+}
+
