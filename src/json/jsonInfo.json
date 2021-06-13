@@ -2,21 +2,21 @@
     {
        "title": "All Shop",
        "name": "products",
-       "url": "/Shop"
+       "url": "/Shop/BTS"
     },
     {
        "title": "TXT Shop",
        "name": "txt",
-       "url": "/txt"
+       "url": "/Shop/txt"
     },
     {
        "title": "GFriend Shop",
        "name": "gfriend",
-       "url": "/gfriend"
+       "url": "/Shop/gfriend"
     },
     {
        "title": "Seventeen Shop",
        "name": "seventeen",
-       "url": "/seventeen"
+       "url": "/Shop/seventeen"
     }
  ]
