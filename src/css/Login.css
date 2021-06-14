@@ -22,7 +22,7 @@
 }
 
 .login-logo{
-    margin: 2rem 0rem;
+    margin: 1rem 0rem;
     cursor: pointer;
     font-family: 'Nova Round', cursive;
     font-size: 36px;
@@ -144,4 +144,39 @@
     height:7vh;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 768px){
+    .login-logo{
+        margin: 1rem 0rem;
+        cursor: pointer;
+        font-family: 'Nova Round', cursive;
+        font-size: 36px;
+        background: linear-gradient(90deg, var(--weverseGreen) 20%, var(--weverseBlue) 84%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .login-card{
+        /* background-color: white; */
+        text-align: center;
+        border: 0.1rem solid white;
+        border-radius: 20px;
+        width:25rem;
+        height:75%;
+        --antd-wave-shadow-color: var(--weversePurple);
+    }
+
+    .login-seperate::after, .login-seperate::before { 
+    
+     
+        content: '';  
+        display: inline-block;  
+        width: 3rem;  
+        height: 1px;  
+        position: absolute;  
+        background: #ccc;  
+        margin-top: 10px;
+       
+        /* top: 50%;   */
+    }
 }

@@ -24,6 +24,7 @@
     border-radius: 2.5rem;
     border: 1px solid var(--weverseGreen);
     color:white;
+    
 }
 .signup-step-line{
     line-height: 2.5rem;
@@ -31,9 +32,147 @@
     color:var(--weverseGreen);
 }
 
-.signup-step1-container{
+.signup-stepinput-container{
     margin-top: 2rem;
-    /* height:16rem; */
+    height:16rem;
     /* background-color: salmon; */
     align-items: center;
+}
+
+.register-card .ant-btn-primary {
+    color: #fff;
+    width:35%;
+    padding: 0;
+    border-radius: 10px;
+    background: var(--weversePurple);
+    border-color: var(--weversePurple);
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+}
+.register-stepbtn-back{
+    width:35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.register-stepbtn-back a{
+    width:100%;
+    height:100%;
+    line-height: 2.5rem;
+    color: var(--weversePurple);
+    font-family: 'Roboto Mono', monospace;
+    border: 1px solid var(--weversePurple);
+    border-radius: 10px;
+}
+
+.register-stepbtn-back .ant-btn-primary {
+    color: var(--weversePurple);
+    width:100%;
+    padding: 0;
+    border-radius: 10px;
+    background: transparent;
+    border-color: var(--weversePurple);
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+}
+
+.register-stepbtn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.signup-birthdaygender{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.signup-birthday{
+    width:35%;
+   
+}
+.signup-gender{
+    width:35%;
+    text-align: left;
+}
+.signup-birthday .signup-input-title{
+    margin:1rem 0;
+   
+}
+.signup-gender .signup-input-title{
+    margin:1rem 0;
+}
+
+.signup-birthday .ant-picker{
+    width:100%;
+    height:2.5rem;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.ant-picker-input > input{
+    color:white;
+}
+
+.signup-birthday .ant-form-item-has-feedback.ant-form-item-has-success .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-warning .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-error .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-is-validating .ant-form-item-children-icon{
+    margin-right:0;
+}
+
+.signup-gender .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    background-color: transparent;
+    height:2.5rem;
+    border-radius: 10px;
+    line-height: 2.5rem;
+
+}
+
+.signup-gender .ant-select{
+    color:white;
+    line-height: 2.5rem;
+    
+
+}
+
+.ant-form-item-has-error .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input) .ant-select-selector{
+    background-color: transparent;
+
+}
+
+.signup-gender .ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder{
+    line-height: 2.5rem;
+}
+
+.welcome-title{
+    font-size: 24px;
+    margin: 2rem 0;
+}
+
+.welcome-content{
+    font-size: 24px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.welcome-btn a{
+    width:100%;
+    height:100%;
+    line-height: 2.5rem;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    /* background-color: aqua; */
+}
+.welcome-btn{
+    width:30%;
+    height:2.5rem;
+    border-radius: 10px;
+    background-color: var(--weversePurple);
 }

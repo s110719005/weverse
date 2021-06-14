@@ -109,7 +109,7 @@ function LoginCard({ redirect }) {
                     </Link>
                 </Form.Item>
                 <Form.Item>
-                    <Link className="login-form-question-text text-purple" to={"/Register?redirect=CheckOut"}>
+                    <Link className="login-form-question-text text-purple" to={"/Register"}>
                         Create an account !
                     </Link>
                 </Form.Item>
