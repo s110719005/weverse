@@ -42,6 +42,7 @@ export const getArtistJSON = (url) => {
 const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
+const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 
 //REFERENCE AUTH
 const auth = firebase.auth();
@@ -108,5 +109,18 @@ export const signOut = () => {
 export const checkLoginApi = () => {
   const user = auth.currentUser;
   return user.uid?  true : false;
+}
+//order
+export const createOrderApi = async (order) => {
+  const user = auth.currentUser.uid;
+  const orderRef = await allOrdersCollectionRef.doc();
+  const id = orderRef.id;
+  // Store Data for Aggregation Queries
+  await orderRef.set({
+    ...order,
+    id,
+    user
+  });
+  return { ...order, id };
 }
 

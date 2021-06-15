@@ -13,7 +13,16 @@ import {
     LOGOUT_REQUEST,
     BEGIN_REGISTER_REQUEST,
     SUCCESS_REGISTER_REQUEST,
-    FAIL_REGISTER_REQUEST
+    FAIL_REGISTER_REQUEST,
+    BEGIN_ORDER_CREATE,
+    SUCCESS_ORDER_CREATE,
+    FAIL_ORDER_CREATE,
+    EMPTY_CART,
+    RESET_ORDER,
+    BEGIN_ORDER_DETAIL,
+    SUCCESS_ORDER_DETAIL,
+    FAIL_ORDER_DETAIL,
+    SAVE_SHIPPING_ADDRESS
   } from "../utils/constants";
 
   import {
@@ -24,6 +33,7 @@ import {
     registerWithEmailPassword,
     signOut,
     checkLoginApi,
+    createOrderApi,
   }from "../api"
 
   import products from "../json/btsProducts.json";
@@ -166,4 +176,41 @@ import {
       dispatch({ type: LOGOUT_REQUEST });    
     }
     return isLogin;
+  }
+
+  export const createOrder = async (dispatch, cart) => {
+    dispatch({ type: BEGIN_ORDER_CREATE });
+    try {
+      const item = {
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        // paymentMethod: cart.paymentMethod,
+        // itemsPrice: cart.itemsPrice,
+        // shippingPrice: cart.shippingPrice,
+        // taxPrice: cart.taxPrice,
+        // totalPrice: cart.totalPrice,
+      };    
+      const orderInfo = await createOrderApi(item);
+      dispatch({ 
+        type: SUCCESS_ORDER_CREATE, 
+        payload: orderInfo 
+      });
+      dispatch({ type: EMPTY_CART,})
+      localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
+      localStorage.removeItem("cartItems");
+      return orderInfo;
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_ORDER_CREATE, payload: error });
+      return null;
+    }  
+  };
+  
+
+  export const saveShippingAddress = (dispatch, shippingAddress) => {
+    dispatch({
+      type: SAVE_SHIPPING_ADDRESS,
+      payload: shippingAddress,
+    });
+    localStorage.setItem('shippingAddress', JSON.stringify(shippingAddress));
   }

@@ -10,6 +10,7 @@ import Feeder from './pages/Feeder';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Account from './pages/Account';
+import Welcome from './pages/Welcome';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/>
           <Route exact path="/Account" component={Account}/>
+          <Route exact path="/Welcome" component={Welcome}/>
           {/* <Route exact path="/Account" component={Account} /> */}
           <Route exact path="/Feeder" component={Feeder} />
           <Route exact path="/CheckOut" component={CheckOut} />

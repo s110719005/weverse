@@ -7,7 +7,7 @@ import { addCartItem, removeCartItem, setProductDetail } from "../../actions";
 const { Option } = Select;
 
 export default function CartList({ isModalVisible, toggleModal }) {
-   const { state: { cartItems }, dispatch } = useContext(StoreContext);
+   const { state: { cart: { cartItems }}, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?

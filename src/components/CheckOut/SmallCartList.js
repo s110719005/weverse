@@ -10,8 +10,9 @@ import {useSpring, animated} from 'react-spring'
 const { Option } = Select;
 
 export default function SmallCartList({ isModalVisible, toggleModal }) {
-   const { state: { cartItems }, dispatch } = useContext(StoreContext);
-   const handleCancel = () => toggleModal(!isModalVisible);
+   const { state: {  cart}, dispatch } = useContext(StoreContext);
+  const { cartItems } = cart;
+  const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)

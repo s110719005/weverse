@@ -1289,7 +1289,7 @@ body {
   border-radius: 10px;
   font-family: 'Roboto Mono', monospace;
   color:white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 .carousel-artists{
@@ -1880,5 +1880,10 @@ body {
     font-size:12px;
     margin:0rem 0rem 1rem 0rem;
   }
+}
+
+.checkout-btn-con .ant-btn-primary{
+  background-color: var(--weversePurple);
+  border-radius: 10px;
 }
 

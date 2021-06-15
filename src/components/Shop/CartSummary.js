@@ -8,7 +8,7 @@ import { ShoppingOutlined,MenuOutlined,BellOutlined,UserOutlined,MenuFoldOutline
 
 export default function CartSummary() {
 
-  const { state: { cartItems } } = useContext(StoreContext);
+  const { state: { cart: { cartItems } } } = useContext(StoreContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const toggleModal = () => setIsModalVisible(!isModalVisible);
 

@@ -18,13 +18,50 @@ import {
   BEGIN_REGISTER_REQUEST,
   SUCCESS_REGISTER_REQUEST,
   FAIL_REGISTER_REQUEST,
+  BEGIN_ORDER_CREATE,
+  SUCCESS_ORDER_CREATE,
+  FAIL_ORDER_CREATE,
+  RESET_ORDER,
+  BEGIN_ORDER_DETAIL,
+  SUCCESS_ORDER_DETAIL,
+  FAIL_ORDER_DETAIL,
+  EMPTY_CART,
+  SAVE_SHIPPING_ADDRESS
 } from "../utils/constants";
 
 
  export const StoreContext = createContext();
- let cartItems = localStorage.getItem("cartItems")
-  ? JSON.parse(localStorage.getItem("cartItems"))
-  : [];
+//  let cartItems = localStorage.getItem("cartItems")
+//   ? JSON.parse(localStorage.getItem("cartItems"))
+//   : [];
+  let cartItems;
+  try{
+    cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    if (!cartItems) cartItems = [];
+  } catch(e) {
+    cartItems = [];
+  }
+
+  let shippingAddress;
+  try {
+    shippingAddress = JSON.parse(localStorage.getItem('shippingAddress'));
+  } catch(e) {
+    shippingAddress = {};
+  }
+
+  let userInfo;
+  try {
+    userInfo =  JSON.parse(localStorage.getItem("userInfo"));
+  } catch(e) {
+    userInfo = null;
+  }
+
+  let orderInfo_order;
+  try {
+    orderInfo_order = JSON.parse(localStorage.getItem('orderInfo'));
+  } catch(e) {
+    orderInfo_order = { id: "" };
+  }
 
  const initialState = {
   page: {
@@ -40,7 +77,12 @@ import {
     typ: "",
     typNum:0
   },
-  cartItems,
+  cart: {
+    cartItems,
+    shippingAddress,
+    paymentMethod: 'Google',
+  },
+  //cartItems,
   navBar: {
     activeItem: "/",
   },
@@ -50,15 +92,24 @@ import {
   },
   userSignin: {
     loading: false,
-    userInfo: localStorage.getItem("userInfo")
-      ? JSON.parse(localStorage.getItem("userInfo"))
-      : null,
+    userInfo,
     error: "",
   },
   userRegister: {
     loading: false,
     userInfo: null,
     error: "",
+  },
+  orderInfo: {
+    loading: false,
+    order: orderInfo_order,
+    success: false,
+    error: null,
+  },
+  orderDetail: {
+    loading: true,
+    order: { cartItems: []},
+    error: null,
   },
   
 };
@@ -68,19 +119,22 @@ function reducer(state, action) {
 
     case ADD_CART_ITEM:
       const item = action.payload;
-      const product = state.cartItems.find((x) => x.id === item.id);
+      const product = state.cart.cartItems.find((x) => x.id === item.id);
       if (product) {
-        cartItems = state.cartItems.map((x) =>
+        cartItems = state.cart.cartItems.map((x) =>
           x.id === product.id ? item : x
         );
-        return { ...state, cartItems };
+        return { ...state, cart: { ...state.cart, cartItems } };
       }
-      cartItems = [...state.cartItems, item];
-      return { ...state, cartItems };
+      cartItems = [...state.cart.cartItems, item];
+      return { ...state, cart: { ...state.cart, cartItems }};
 
     case REMOVE_CART_ITEM:
-      cartItems = state.cartItems.filter((x) => x.id !== action.payload);
-      return { ...state, cartItems };
+      cartItems = state.cart.cartItems.filter((x) => x.id !== action.payload);
+      return { ...state, cart: { ...state.cart, cartItems } };
+    case EMPTY_CART:
+      cartItems = [];
+      return { ...state, cart: { ...state.cart, cartItems } };
     case SET_PAGE_CONTENT:
       return {
         ...state,
@@ -157,6 +211,48 @@ function reducer(state, action) {
           loading: false,
           userInfo: null,
           error: action.payload,
+        },
+      };
+      case BEGIN_ORDER_CREATE:
+      return {
+        ...state,
+        orderInfo: {
+          ...state.orderInfo,
+          loading: true,
+          success: false,
+        }
+      };
+
+    case SUCCESS_ORDER_CREATE:
+      return {
+        ...state,
+        orderInfo: {
+          ...state.orderInfo,
+          loading: false,
+          order: action.payload,
+          success: true,
+          error: null,
+        },
+      };
+    case FAIL_ORDER_CREATE:
+      return {
+        ...state,
+        orderInfo: {
+          ...state.orderInfo,
+          loading: false,
+          order: { id: "" },
+          success: false,
+          error: action.payload,
+        },
+      };
+      case RESET_ORDER:
+      return {
+        ...state,
+        orderInfo: {
+          ...state.orderInfo,
+          loading: false,
+          order: { id: "" },
+          success: false,
         },
       };
     default:
