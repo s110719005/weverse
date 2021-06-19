@@ -17,7 +17,7 @@ export default function CartSummary() {
     : 0;
 
   return (
-    <>
+    <div>
     <CartModal isModalVisible = {isModalVisible} toggleModal = {toggleModal}/>
       <div onClick={toggleModal} className="header-cart-summary" >
         <Badge count={count} size={"small"} style={{ color: 'white', backgroundColor: '#9E90F2' }}>
@@ -26,7 +26,7 @@ export default function CartSummary() {
         {/* <p className="cart-summary-text"> Shopping bag </p> */}
       </div>
       
-    </>
+    </div>
   );
 }
 

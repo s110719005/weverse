@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Account from './pages/Account';
 import Welcome from './pages/Welcome';
+import Artist from './pages/Artist';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/Artist" component={Artist} />
           <Route exact path="/Shop" component={Shop} />
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/>

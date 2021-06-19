@@ -2,6 +2,7 @@
 @import './css/Feed.css';
 @import './css/Login.css';
 @import './css/Register.css';
+@import './css/Artist.css';
 
 :root {
   --weverseGreen: #84FAB0;
@@ -968,7 +969,8 @@ body {
 }
 .ant-modal-body,.ant-modal-content{
   background-color: var(--weverseBlack);
-  width:20rem;
+  width:auto;
+  /* height:auto; */
   padding-top: 1.5rem;
 }
 

@@ -1,0 +1,117 @@
+.artist-mainarea{
+    margin: 0rem 5rem;
+}
+
+.artist-title-text{
+    font-size: 24px;
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+.artist-notification{
+    display: flex;
+    flex-direction: row;
+}
+
+.artist-mainarea .ant-switch-checked{
+    background-color: var(--weversePurple);
+}
+
+.artist-mainarea .ant-switch {
+    border: 1px solid var(--weversePurple);
+}
+
+.artist-notification-text{
+    font-size: 18px;
+    margin-left: 0.5rem;
+    line-height: 22px;
+}
+
+.artist-moment{
+    margin: 1rem 0rem;
+}
+
+.artist-moment-title{
+    font-size: 20px;
+}
+
+.artist-post{
+    margin: 1rem 0rem;
+}
+
+.moment-container{
+    display: flex;
+    flex-direction: row;
+}
+.moment-thumbnail{
+    width:3.5rem;
+    height:3.5rem;
+    border-radius: 3.5rem;
+    border: solid 3px var(--weverseGreen);
+    cursor:pointer;
+}
+
+.moment-set{
+    margin:1rem 1rem;
+    display: flex;
+    z-index: 5;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.moment-modal-thumbnail{
+    width:3.5rem;
+    height:3.5rem;
+    border-radius: 3.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.artist-mainarea .ant-modal-body, .ant-modal-content {
+    background-color: var(--weverseBlack);
+    width: 40rem;
+    padding-top: 1.5rem;
+}
+
+.moment-modal{
+    margin-top:-3rem;
+    padding-top: 1.5rem;
+    width:25rem;
+    /* background-color: orange; */
+    height:40rem;
+}
+
+.moment-modal-picture-container{
+    width:23.5rem;
+    height:30rem;
+    overflow: hidden;
+}
+
+.moment-modal-title{
+    display: flex;
+    flex-direction: row;
+    /* background-color: darkolivegreen; */
+}
+
+.moment-modal-text{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:3.5rem;
+}
+
+.moment-modal-like{
+    margin:1rem 0rem;
+    text-align: center;
+}
+.moment-modal-timeline{
+    height:0.3rem;
+    width:23.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--weverseGrey);
+}
+
+
+

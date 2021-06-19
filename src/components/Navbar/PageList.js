@@ -25,7 +25,7 @@ export default function PageList() {
    }, [userInfo, remember]);
     return (
         <div className="navnar-pagelist">
-            <Link to="/">
+            <Link to="/Artist">
                 <div className="navbar-pagelist-text">
                     Artist Post
                 </div>

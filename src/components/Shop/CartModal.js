@@ -28,6 +28,9 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    
 
    return (
+      <div className="cart-summary">
+
+      
       <Modal
          title="Shopping Bag"
          visible={isModalVisible}
@@ -116,5 +119,6 @@ export default function CartModal({ isModalVisible, toggleModal }) {
          
          </div>
       </Modal>
+      </div>
    );
 }

@@ -22,7 +22,13 @@ import {
     BEGIN_ORDER_DETAIL,
     SUCCESS_ORDER_DETAIL,
     FAIL_ORDER_DETAIL,
-    SAVE_SHIPPING_ADDRESS
+    SAVE_SHIPPING_ADDRESS,
+    //moment
+    BEGIN_MOMENT_REQUEST,
+    SUCCESS_MOMENT_REQUEST,
+    FAIL_MOMENT_REQUEST,
+    SET_MOMENT_CONTENT,
+    SET_MOMENT_DETAIL,
   } from "../utils/constants";
 
   import {
@@ -34,9 +40,12 @@ import {
     signOut,
     checkLoginApi,
     createOrderApi,
+    //moment
+    getMoments,
+    getMomentById,
   }from "../api"
 
-  import products from "../json/btsProducts.json";
+  //import products from "../json/btsProducts.json";
 
   export const addCartItem = (dispatch, product, qty,typ,typNum) => {
     const item = {
@@ -214,3 +223,22 @@ import {
     });
     localStorage.setItem('shippingAddress', JSON.stringify(shippingAddress));
   }
+
+  ////////moment////////
+  export const setMoment = async (dispatch, url) => {
+    let moments = [];
+    dispatch({ type: BEGIN_MOMENT_REQUEST });
+    try {
+      moments = await getMoments(url);
+      dispatch({
+        type: SET_MOMENT_CONTENT,
+        payload: { moments },
+      });
+      
+      dispatch({ type: SUCCESS_MOMENT_REQUEST });
+      
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_MOMENT_REQUEST, payload: error });
+    }
+  };

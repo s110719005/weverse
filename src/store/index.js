@@ -22,11 +22,13 @@ import {
   SUCCESS_ORDER_CREATE,
   FAIL_ORDER_CREATE,
   RESET_ORDER,
-  BEGIN_ORDER_DETAIL,
-  SUCCESS_ORDER_DETAIL,
-  FAIL_ORDER_DETAIL,
   EMPTY_CART,
-  SAVE_SHIPPING_ADDRESS
+  //moment
+  BEGIN_MOMENT_REQUEST,
+  SUCCESS_MOMENT_REQUEST,
+  FAIL_MOMENT_REQUEST,
+  SET_MOMENT_CONTENT,
+  SET_MOMENT_DETAIL,
 } from "../utils/constants";
 
 
@@ -110,6 +112,23 @@ import {
     loading: true,
     order: { cartItems: []},
     error: null,
+  },
+  //moment
+  requestMoments: {
+    loading: false,
+    error: null,
+  },
+  momentList:{
+    moments:[]
+  },
+  momentDetail:{
+    moment:{
+      date:null,
+      image:"",
+      like:0
+    },
+    thumbnail:"",
+    stageName:""
   },
   
 };
@@ -245,7 +264,7 @@ function reducer(state, action) {
           error: action.payload,
         },
       };
-      case RESET_ORDER:
+    case RESET_ORDER:
       return {
         ...state,
         orderInfo: {
@@ -255,6 +274,30 @@ function reducer(state, action) {
           success: false,
         },
       };
+    ////////////MOMENT////////////
+    
+    case BEGIN_MOMENT_REQUEST:
+      return { ...state, requestMoments: { ...state.requestMoments, loading: true } }
+    case SUCCESS_MOMENT_REQUEST:
+      return { ...state, requestMoments: { ...state.requestMoments, loading: false } }
+    case FAIL_MOMENT_REQUEST:
+      return { ...state, requestMoments: { ...state.requestMoments, loading: false,error: action.payload } }
+    case SET_MOMENT_CONTENT:
+      return{
+        ...state,
+        momentList: action.payload,
+      }
+    case SET_MOMENT_DETAIL:
+      return{
+        ...state,
+        momentDetail:action.payload
+      }
+    ////////////MOMENT////////////
+      
+
+
+
+
     default:
       return state;
   }
