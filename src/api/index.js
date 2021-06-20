@@ -48,7 +48,8 @@ const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 const allArtistPostCollectionRef = firebase.firestore().collection("allArtistPost");
 const BTSDocRef = allArtistPostCollectionRef.doc("BTS");
 const allBTSMomentsCollectionRef = BTSDocRef.collection("allArtist");
-
+//ARTIST POST REFERENCE
+const allBTSPostsCollectionRef = BTSDocRef.collection("allPost");
 
 
 
@@ -133,6 +134,7 @@ export const createOrderApi = async (order) => {
 }
 
 
+////////////MOMENT////////////
 
 export const getMoments = async(url) => {
   const collection = jsonInfo.find(element => element.url === url);
@@ -153,4 +155,23 @@ export const getMomentById = async (momentId) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await allBTSMomentsCollectionRef.doc(momentId).get();
   return doc.data()
+
 }
+
+////////////MOMENT////////////
+////////////ARTIST POST////////////
+export const getArtistPosts = async(url) => {
+  const collection = jsonInfo.find(element => element.url === url);
+  const collectionName = "allArtistPost";
+
+  let btsPostCollection = [];
+
+  let querySnapshot;
+  if(collectionName === "allArtistPost")
+    querySnapshot = await allBTSPostsCollectionRef.get();
+    querySnapshot.forEach((doc) => {
+      btsPostCollection.push(doc.data());
+      });
+  return btsPostCollection;
+}
+////////////ARTIST POST////////////

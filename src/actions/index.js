@@ -29,6 +29,11 @@ import {
     FAIL_MOMENT_REQUEST,
     SET_MOMENT_CONTENT,
     SET_MOMENT_DETAIL,
+    //artist post
+    BEGIN_ARTISTPOST_REQUEST,
+    SUCCESS_ARTISTPOST_REQUEST,
+    FAIL_ARTISTPOST_REQUEST,
+    SET_ARTISTPOST_CONTENT,
   } from "../utils/constants";
 
   import {
@@ -43,6 +48,8 @@ import {
     //moment
     getMoments,
     getMomentById,
+    //artist post
+    getArtistPosts,
   }from "../api"
 
   //import products from "../json/btsProducts.json";
@@ -240,5 +247,24 @@ import {
     } catch (error) {
       console.log(error);
       dispatch({ type: FAIL_MOMENT_REQUEST, payload: error });
+    }
+  };
+
+  ////////artist post////////
+  export const setArtistPost = async (dispatch, url) => {
+    let artistPosts = [];
+    dispatch({ type: BEGIN_ARTISTPOST_REQUEST });
+    try {
+      artistPosts = await getArtistPosts(url);
+      dispatch({
+        type: SET_ARTISTPOST_CONTENT,
+        payload: { artistPosts },
+      });
+      
+      dispatch({ type: SUCCESS_ARTISTPOST_REQUEST });
+      
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_ARTISTPOST_REQUEST, payload: error });
     }
   };

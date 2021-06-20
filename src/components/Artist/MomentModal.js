@@ -1,9 +1,11 @@
 import { Modal, Button, Select } from "antd";
+import { SmileOutlined } from '@ant-design/icons';
 import { useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { StoreContext } from "../../store"
 import { CartIcon } from "../Icons";
 import { addCartItem, removeCartItem, setProductDetail } from "../../actions";
+
 const { Option } = Select;
 
 export default function MomentModal({ isModalVisible, toggleModal,moment }) {
@@ -68,7 +70,10 @@ export default function MomentModal({ isModalVisible, toggleModal,moment }) {
                                 />
                         </div>
                         <div className="text-white moment-modal-like">
-                            like:{momentModal.like}
+                            <SmileOutlined />&nbsp;{momentModal.like}&nbsp;&nbsp;
+                            <SmileOutlined />&nbsp;{momentModal.like}&nbsp;&nbsp;
+                            <SmileOutlined />&nbsp;{momentModal.like}&nbsp;&nbsp;
+                            <SmileOutlined />&nbsp;{momentModal.like}
                         </div>
                     </div>
                 ))}

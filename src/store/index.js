@@ -29,6 +29,11 @@ import {
   FAIL_MOMENT_REQUEST,
   SET_MOMENT_CONTENT,
   SET_MOMENT_DETAIL,
+  //artist post
+  BEGIN_ARTISTPOST_REQUEST,
+  SUCCESS_ARTISTPOST_REQUEST,
+  FAIL_ARTISTPOST_REQUEST,
+  SET_ARTISTPOST_CONTENT,
 } from "../utils/constants";
 
 
@@ -129,6 +134,14 @@ import {
     },
     thumbnail:"",
     stageName:""
+  },
+  //artist post
+  artistPostList:{
+    artistPosts:[]
+  },
+  requestArtistPosts: {
+    loading: false,
+    error: null,
   },
   
 };
@@ -293,6 +306,19 @@ function reducer(state, action) {
         momentDetail:action.payload
       }
     ////////////MOMENT////////////
+    ////////////ARTIST POST////////////
+    case BEGIN_ARTISTPOST_REQUEST:
+      return { ...state, requestArtistPosts: { ...state.requestArtistPosts, loading: true } }
+    case SUCCESS_ARTISTPOST_REQUEST:
+      return { ...state, requestArtistPosts: { ...state.requestArtistPosts, loading: false } }
+    case FAIL_ARTISTPOST_REQUEST:
+      return { ...state, requestArtistPosts: { ...state.requestArtistPosts, loading: false,error: action.payload } }
+    case SET_ARTISTPOST_CONTENT:
+      return{
+        ...state,
+        artistPostList: action.payload,
+      }
+    ////////////ARTIST POST////////////
       
 
 

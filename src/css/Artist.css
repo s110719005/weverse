@@ -42,12 +42,16 @@
     display: flex;
     flex-direction: row;
 }
+
+
 .moment-thumbnail{
     width:3.5rem;
     height:3.5rem;
     border-radius: 3.5rem;
+
     border: solid 3px var(--weverseGreen);
     cursor:pointer;
+    object-fit: cover;
 }
 
 .moment-set{
@@ -65,6 +69,7 @@
     border-radius: 3.5rem;
     margin-right: 1.5rem;
     margin-bottom: 1.5rem;
+    object-fit: cover;
 }
 
 .artist-mainarea .ant-modal-body, .ant-modal-content {
@@ -85,6 +90,13 @@
     width:23.5rem;
     height:30rem;
     overflow: hidden;
+}
+
+.moment-picture{
+    width:23.5rem;
+    height:30rem;
+    object-fit: cover;
+
 }
 
 .moment-modal-title{
@@ -113,5 +125,180 @@
     background-color: var(--weverseGrey);
 }
 
+.artist-post-title{
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+.artist-post-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: lightsalmon; */
+    /* width:100%; */
+}
+.artist-post-card{
+    margin-bottom: 2rem;
+    /* background-color: lightcoral; */
+    width:40rem;
+    border-radius: 10px;
+    border: solid 1px white;
+    padding:1.5rem;
+}
+
+.artist-post-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.artist-post-header-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.artist-post-header-lefttext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.artist-post-artistname{
+    font-size: 18px;
+
+}
+.artist-post-date{
+    font-size: 14px;
+
+}
+
+.artist-post-thumbnail{
+    width:3.5rem;
+    height:3.5rem;
+    border-radius: 3.5rem;
+    margin-right: 1.5rem;
+    object-fit: cover;
+}
+
+.artist-post-content{
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+.artist-post-image-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+.artist-post-1image{
+    width:100%;
+    height:25rem;
+    margin-top:1rem;
+    border-radius: 10px;
+    object-fit:cover;
+
+}
+
+.artist-post-2imagesl{
+    width:18rem;
+    height:25rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-top:1rem;
+    object-fit: cover;
+}
+
+.artist-post-3images-big{
+    width:18rem;
+    height:25rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-top:1rem;
+    object-fit: cover;
+}
+
+.artist-post-3images-small{
+    width:18rem;
+    height:12rem;
+    margin-top:1rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.artist-post-4images-small{
+    width:18rem;
+    height:12rem;
+    margin-top:1rem;
+    margin-right:1rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.artist-post-like{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width:100%;
+    height:2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+.artist-reply-container{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    
+}
+
+.artist-reply-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.artist-reply-content{
+    width:auto;
+    max-width: 30rem;
+    padding:0.5rem 1rem;
+    height:auto;
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+}
+
+.artist-reply-thumbnail{
+    width:3rem;
+    height:3rem;
+    border-radius: 3rem;
+    margin-right: 1rem;
+    background: linear-gradient(90deg, var(--weverseGreen) 20%, var(--weverseBlue) 84%);
+
+}
+
+.artist-reply-like{
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.artist-reply-btn{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.icon-like{
+    cursor: pointer;
+}
+
+.icon-like a{
+    color:var(--weverseBlue)
+  }
+  .icon-like .ant-icon:hover{
+    color:var(--weverseGreen)
+  }
+  .icon-like .ant-icon:active{
+    color:var(--weverseBlue)
+  }
 
 

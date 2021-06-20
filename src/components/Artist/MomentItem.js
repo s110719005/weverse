@@ -19,6 +19,7 @@ export default function MomentItem({ moment }) {
         <div>
             <MomentModal isModalVisible = {isModalVisible} toggleModal = {toggleModal} moment={moment}/>
             <div className="moment-set">
+                
                 <img
                     className="moment-thumbnail"
                     style={{borderWidth:isMoment}}

@@ -7,7 +7,7 @@ import NavbarPhone from "../components/Navbar/NavbarPhone";
 
 import { StoreContext } from "../store"
 import {getTitle} from "../utils"
-import {setMoment} from "../actions"
+import {setMoment,setArtistPost} from "../actions"
 
 const { Header, Content, Footer } = Layout;
 
@@ -17,6 +17,7 @@ function Artist() {
   useEffect(() => {
     const url = window.location.pathname;
     setMoment(dispatch,url);
+    setArtistPost(dispatch,url);
   }, []);// eslint-disable-line react-hooks/exhaustive-deps 
   return (
     <Layout className="container main-layout">

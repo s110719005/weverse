@@ -4,8 +4,8 @@ import { Switch } from 'antd';
 import {useSpring, animated} from 'react-spring'
 
 import { StoreContext } from "../../store"
-import { logoutFromFirebase} from "../../actions";
 import MomentList from "./MomentList";
+import ArtistPostList from "./ArtistPostList";
 
 
 
@@ -42,9 +42,10 @@ function MainArea({isNavBarVisible}) {
                 <MomentList/>
             </div>
             <div className = "artist-post">
-                <div className="text-white artist-moment-title">
+                <div className="text-white artist-post-title">
                     Post
                 </div>
+                <ArtistPostList/>
             </div>
             
             
