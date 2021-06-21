@@ -6,7 +6,7 @@ import { StoreContext } from "../../store"
 import { SmileOutlined,StarOutlined,LikeOutlined} from '@ant-design/icons';
 
 
-export default function ArtistUserReply({ artistPost }) {
+export default function FanUserReply({ fanPost }) {
     const { state: { userInfo: { info}  },dispatch } = useContext(StoreContext);
   const [isMoment, setIsMoment] = useState("0px");
   const [isModalVisible, setIsModalVisible] = useState(false);

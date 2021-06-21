@@ -52,7 +52,8 @@ const allBTSMomentsCollectionRef = BTSDocRef.collection("allArtist");
 const allBTSPostsCollectionRef = BTSDocRef.collection("allPost");
 //SAVE USER PUBLIC DATA
 const allUserRef = firebase.firestore().collection("user");
-
+//FAN POST DATA
+const allFanPostRef = firebase.firestore().collection("allFanPost");
 
 
 //REFERENCE AUTH
@@ -258,3 +259,42 @@ export const getUserNameByPostId = async (uid) => {
   return user;
   
 }
+///////////USER REPLY////////////
+///////////CREATE FAN POST////////////
+export const createFanPostApi = async (content) => {
+  const uid = auth.currentUser.uid;
+  const userRef = await allUserRef.doc(uid).get();
+  const fanPostRef = await allFanPostRef.doc();
+  let user = {}
+  user = userRef.data();
+  const id = fanPostRef.id;
+  // Store Data for Aggregation Queries
+  await fanPostRef.set({
+    content:content,
+    nickName:user.nickName,
+    thumbnail:user.thumbnail,
+    like:0,
+    date:"06/22/2021,06:45",
+    id,
+    uid:uid,
+    reply:[],
+    image:["https://github.com/unbeliebubble/img/blob/main/pd/bubble/pd_bubble_3.png?raw=true"],
+  });
+  return { id };
+}
+///////////CREATE FAN POST////////////
+////////////FAN POST////////////
+export const getFanPosts = async() => {
+  const collectionName = "allFanPost";
+
+  let fanPostCollection = [];
+
+  let querySnapshot;
+  if(collectionName === "allFanPost")
+    querySnapshot = await allFanPostRef.get();
+    querySnapshot.forEach((doc) => {
+      fanPostCollection.push(doc.data());
+      });
+  return fanPostCollection;
+}
+////////////FAN POST////////////

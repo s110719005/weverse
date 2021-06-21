@@ -30,7 +30,7 @@ export default function PageList() {
                     Artist Post
                 </div>
             </Link>
-            <Link to="/">
+            <Link to="/Login?redirect=Fan">
                 <div className="navbar-pagelist-text">
                     Fan Post
                 </div>

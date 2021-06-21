@@ -12,6 +12,7 @@ import Register from './pages/Register';
 import Account from './pages/Account';
 import Welcome from './pages/Welcome';
 import Artist from './pages/Artist';
+import Fan from './pages/Fan';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Artist" component={Artist} />
+          <Route exact path="/Fan" component={Fan} />
           <Route exact path="/Shop" component={Shop} />
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Register" component={Register}/>

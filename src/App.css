@@ -5,6 +5,7 @@
 @import './css/Artist.css';
 @import './css/Header.css';
 @import './css/Account.css';
+@import './css/Fan.css';
 
 :root {
   --weverseGreen: #84FAB0;

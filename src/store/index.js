@@ -48,6 +48,15 @@ import {
   SUCCESS_REPLYUSERINFO_REQUEST,
   FAIL_REPLYUSERINFO_REQUEST,
   SET_REPLYUSERINFO_CONTENT,
+  //create fan post
+  BEGIN_FANPOST_CREATE,
+  SUCCESS_FANPOST_CREATE,
+  FAIL_FANPOST_CREATE,
+  //fan post
+  BEGIN_FANPOST_REQUEST,
+  SUCCESS_FANPOST_REQUEST,
+  FAIL_FANPOST_REQUEST,
+  SET_FANPOST_CONTENT,
 } from "../utils/constants";
 
 
@@ -166,7 +175,24 @@ import {
     error: null,
   },
   //reply user info
-  replyName:""
+  replyName:"",
+  //create fan post
+  fanPost:{
+    post:{}
+  },
+  createFanPost:{
+    loading: false,
+    error: null,
+    success: false,
+  },
+  //fan posr
+  fanPostList:{
+    fanPosts:[]
+  },
+  requestFanPosts: {
+    loading: false,
+    error: null,
+  },
   
 };
 
@@ -391,6 +417,60 @@ function reducer(state, action) {
         ...state,
         replyName: action.payload,
       }
+    ////////////REPLY USER INFO////////////
+    ////////////CREATE FAN POST////////////
+    case BEGIN_FANPOST_CREATE:
+      return {
+        ...state,
+        createFanPost: {
+          ...state.createFanPost,
+          loading: true,
+          success: false,
+        }
+      };
+      // fanPost:{
+      //   post:{}
+      // },
+      // createFanPost:{
+      //   loading: false,
+      //   error: null,
+      // },
+    case SUCCESS_FANPOST_CREATE:
+      return {
+        ...state,
+        createFanPost: {
+          ...state.createFanPost,
+          loading: false,
+          fanPost: action.payload,
+          success: true,
+          error: null,
+        },
+      };
+    case FAIL_FANPOST_CREATE:
+      return {
+        ...state,
+          createFanPost: {
+          ...state.createFanPost,
+          loading: false,
+          fanpost: {},
+          success: false,
+          error: action.payload,
+        },
+      };
+    ////////////CREATE FAN POST////////////
+    ////////////FAN POST////////////
+    case BEGIN_FANPOST_REQUEST:
+      return { ...state, requestFanPosts: { ...state.requestFanPosts, loading: true } }
+    case SUCCESS_FANPOST_REQUEST:
+      return { ...state, requestFanPosts: { ...state.requestFanPosts, loading: false } }
+    case FAIL_FANPOST_REQUEST:
+      return { ...state, requestFanPosts: { ...state.requestFanPosts, loading: false,error: action.payload } }
+    case SET_FANPOST_CONTENT:
+      return{
+        ...state,
+        fanPostList: action.payload,
+      }
+    ////////////FAN POST////////////
     
     
     

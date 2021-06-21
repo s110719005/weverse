@@ -1,0 +1,51 @@
+.fan-postcard-container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fan-postcard{
+    width:39.7rem;
+    height:19.7rem;
+    background-color: var(--weverseBlack);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.fan-postcard-gradient{
+    width:40rem;
+    height:20rem;
+    background: linear-gradient(60deg, var(--weverseGreen) 20%, var(--weverseBlue) 84%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fan-postcard-title{
+    font-size: 20px;
+    width: 100%;
+    border-bottom:  2px solid white;
+    margin-bottom: 1rem;
+}
+
+.fan-postcard-content-container{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    border-bottom:  2px solid white;
+    margin-bottom: 1rem;
+
+    /* height:15rem; */
+}
+
+.fan-postcard-content-container .ant-input{
+    background-color: transparent;
+    border: 0;
+    width:30rem;
+    color:white;
+}
+.fan-postcard-content-container .ant-form-item .ant-mentions, .ant-form-item textarea.ant-input{
+    height:10rem;
+
+}

@@ -48,6 +48,15 @@ import {
     SUCCESS_REPLYUSERINFO_REQUEST,
     FAIL_REPLYUSERINFO_REQUEST,
     SET_REPLYUSERINFO_CONTENT,
+    //create fan post
+    BEGIN_FANPOST_CREATE,
+    SUCCESS_FANPOST_CREATE,
+    FAIL_FANPOST_CREATE,
+    //fan post
+    BEGIN_FANPOST_REQUEST,
+    SUCCESS_FANPOST_REQUEST,
+    FAIL_FANPOST_REQUEST,
+    SET_FANPOST_CONTENT,
   } from "../utils/constants";
 
   import {
@@ -70,6 +79,10 @@ import {
     updateUserInfoApi,
     //reply user info
     getUserNameByPostId,
+    //create fan post
+    createFanPostApi,
+    //fan post
+    getFanPosts,
   }from "../api"
 
   //import products from "../json/btsProducts.json";
@@ -370,5 +383,42 @@ import {
     }
   }
   ////////reply user info////////
-
+  ////////create fan post////////
+  export const createFanPost = async (dispatch, content) => {
+    dispatch({ type: BEGIN_FANPOST_CREATE });
+    try {
+        
+      await createFanPostApi(content);
+      dispatch({ 
+        type: SUCCESS_FANPOST_CREATE, 
+        //payload: fanpost
+      });
+      
+      //return orderInfo;
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_FANPOST_CREATE, payload: error });
+      return null;
+    }  
+  };
+  ////////create fan post////////
+  ////////fan post////////
+  export const setFanPost = async (dispatch) => {
+    let fanPosts = [];
+    dispatch({ type: BEGIN_FANPOST_REQUEST });
+    try {
+      fanPosts = await getFanPosts();
+      dispatch({
+        type: SET_FANPOST_CONTENT,
+        payload: { fanPosts },
+      });
+      
+      dispatch({ type: SUCCESS_FANPOST_REQUEST });
+      
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_FANPOST_REQUEST, payload: error });
+    }
+  };
+  ////////fan post////////
 
