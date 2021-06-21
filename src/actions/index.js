@@ -163,8 +163,8 @@ import {
   export const registerToFirebase = async (dispatch, userInfo) => {
     dispatch({ type: BEGIN_REGISTER_REQUEST });
     try {
-      const user = await registerWithEmailPassword(userInfo.email, userInfo.password, userInfo.name);
-      console.log(user)
+      const user = await registerWithEmailPassword(userInfo.email, userInfo.password, userInfo.name,userInfo.birthday,userInfo.gender,userInfo.address,userInfo.phone);
+      console.log(userInfo)
       dispatch({
         type: SUCCESS_REGISTER_REQUEST,
         payload: user.providerData[0],

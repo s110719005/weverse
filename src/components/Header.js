@@ -1,21 +1,19 @@
 import { useContext,useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import { ShoppingOutlined,MenuOutlined,BellOutlined,UserOutlined,MenuFoldOutlined,MenuUnfoldOutlined,LoginOutlined } from '@ant-design/icons';
 import { CartIcon } from "./Icons";
 
 import { StoreContext } from "../store";
 import CartSummary from "./Shop/CartSummary";
-//import CartSummary from "./CartSummary";
-//import { pageContentsSet, activeNavItemSet } from "../actions";
-//import { getJSON } from "../api";
+
+
 
 export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
-   const { dispatch } = useContext(StoreContext);
-  // const onClickHeader = () => {
-  //   pageContentsSet(dispatch, "NORDIC NEST Shopping Cart", getJSON("/"));
-  //   activeNavItemSet(dispatch, "/");
-  // };
+  const { state: { userSignin: { userInfo },}, dispatch } = useContext(StoreContext);
   const [isOnTouch, setIsOnTouch] = useState(false);
+  const history = useHistory();
   
 
   
@@ -44,20 +42,42 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
         <div className="header-wrap-middle" visible={isOnTouch}>
           Weverse
         </div>  
-        
-        <div className="header-wrap-right">
-          <CartSummary/>
-          <Link to="/">
-            <BellOutlined className="header-icon"/ >
-          </Link>
-          <div className="icon-user">
 
-          <Link to="/">
-            <LoginOutlined className="header-icon"/>
-            {/* <UserOutlined / > */}
-          </Link>
-          </div>
-        </div>
+        
+        
+          {
+            userInfo === null ? 
+            (
+              <div className="header-wrap-right header-wrap-right-sign text-white "> 
+                <Link to="/Register?redirect=">
+                  <div className="header-signup-btn text-white">
+                    Sign Up
+                  </div>
+                </Link>
+                <Link to="/Login?redirect=">
+                  <div className="header-signin-btn">
+                    Sign In
+                  </div>
+                </Link>
+              </div>
+            ) : 
+            (
+              <div className="header-wrap-right">
+                <CartSummary/>
+                <Link to="/">
+                  <BellOutlined className="header-icon"/ >
+                </Link>
+                <div className="icon-user">
+                  <Link to="/">
+                    <LoginOutlined className="header-icon"/>
+                    {/* <UserOutlined / > */}
+                  </Link>
+                </div>
+              </div>
+            )
+          }
+          
+       
 
        
             

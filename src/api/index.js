@@ -50,6 +50,8 @@ const BTSDocRef = allArtistPostCollectionRef.doc("BTS");
 const allBTSMomentsCollectionRef = BTSDocRef.collection("allArtist");
 //ARTIST POST REFERENCE
 const allBTSPostsCollectionRef = BTSDocRef.collection("allPost");
+//SAVE USER PUBLIC DATA
+const allUserRef = firebase.firestore().collection("user");
 
 
 
@@ -102,12 +104,32 @@ export const signInWithEmailPassword = async (email, password) => {
   return await auth.signInWithEmailAndPassword(email, password);
 }
 
-export const registerWithEmailPassword = async (email, password, name) => {
+export const registerWithEmailPassword = async (email, password, name,birthday,gender,address,phoneNumber) => {
   await auth.createUserWithEmailAndPassword(email, password);
   const user = auth.currentUser;
+  const userId = auth.currentUser.uid;
+
   await user.updateProfile({
     displayName: name,
+    // birthday: birthday,
+    // gender: gender,
+    // address: address,
+    // phoneNumber: phoneNumber
   })
+  const userRef = await allUserRef.doc();
+  await userRef.set({
+    name: name,
+    gender: gender,
+    address: address,
+    phoneNumber: phoneNumber,
+    uid: auth.currentUser.uid,
+  });
+  // name: name,
+  //   birthday: birthday,
+  //   gender: gender,
+  //   address: address,
+  //   phoneNumber: phoneNumber,
+  //   uid: auth.currentUser.uid,
   return user;
 }
 

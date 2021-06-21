@@ -20,22 +20,15 @@ function MainArea({isNavBarVisible}) {
         },
         dispatch,
       } = useContext(StoreContext);
-      const { displayName, email } = userInfo;
+      //const { displayName, email } = userInfo;
       const history = useHistory();
       const [form] = Form.useForm();
-    
-    //   const handleUpdate = (values) => {
-    //     console.log(values)
-    //     updateUserInfo(dispatch, values);
-    //   };
     
       const handleLogout = () => {
         logoutFromFirebase(dispatch);
         history.push("/");
       };
     const closeNav = useSpring({
-        // from: { opacity: 0 },
-        // to: { opacity: 1 }
         paddingLeft: !isNavBarVisible?"2rem":"3rem",
         paddingRight: !isNavBarVisible?"2rem":"3rem",
       });
@@ -52,6 +45,24 @@ function MainArea({isNavBarVisible}) {
             >
             Log out
             </Button>
+            <div className="text-white">
+              {userInfo.displayName}
+            </div>
+            <div className="text-white">
+              {userInfo.email}
+            </div>
+            <div className="text-white">
+              {userInfo.gender}
+            </div>
+            <div className="text-white">
+              {userInfo.address}
+            </div>
+            <div className="text-white">
+              {userInfo.displayName}
+            </div>
+            <div className="text-white">
+              {userInfo.phone}
+            </div>
             
             
             
