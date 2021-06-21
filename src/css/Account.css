@@ -1,0 +1,227 @@
+.account-mainarea{
+    height:100%;
+    width:100%;
+    padding:7rem;
+    padding-top: 0rem;
+    overflow: auto;
+    overflow: scroll;
+  }
+
+.account-title{
+    font-size: 24px;
+    margin:1rem 4rem;
+}
+.account-card-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.account-icons-container{
+    width:3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.account-icon1-container-inactive,.account-icon2-container-inactive,.account-icon3-container-inactive,.account-icon4-container-inactive{
+    width:3rem;
+    height:4rem;
+    background: linear-gradient(30deg, var(--weverseGreen) 10%, var(--weverseBlue) 84%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px  0 0 10px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.account-icon2-container-inactive{
+    width:2.8rem;
+    opacity: 0.5;
+
+}
+.account-icon3-container-inactive{
+    width:2.6rem;
+    opacity: 0.4;
+
+}
+.account-icon4-container-inactive{
+    width:2.4rem;
+    opacity: 0.3;
+
+}
+
+.account-icon1-container-active,.account-icon2-container-active,.account-icon3-container-active,.account-icon4-container-active{
+    width:3rem;
+    height:4rem;
+    background-color: var(--weverseBlack);
+    border: 1px solid white;
+    border-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px  0 0 10px;
+}
+.account-icon2-container-active{
+    width:2.8rem;
+}
+.account-icon3-container-active{
+    width:2.6rem;
+}
+.account-icon4-container-active{
+    width:2.4rem;
+}
+
+.account-icons-inactive .anticon, .anticon-close, .ant-modal-close-icon{
+    color:var(--weverseBlack);
+}
+
+.account-card1-container{
+    display: flex;
+    flex-direction: column;
+    width:58rem;
+    height: 40rem;
+    border: 1px solid white;
+    border-radius: 0 10px 10px 10px;
+    padding:1.5rem 3rem;
+}
+
+.account-card1-title{
+    font-size: 20px;
+}
+
+.account-crd1-welcome{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+    width:100%;
+    /* background-color: antiquewhite; */
+}
+
+.account-card1-thumbnail{
+    width:5rem;
+    height:5rem;
+    border-radius: 5rem;
+    margin-right: 1rem;
+}
+
+.account-crd1-welcome-text{
+    font-size: 20px;
+}
+
+.account-card1-samllcard-row{
+    display:flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    margin-bottom: 3rem;
+}
+
+.account-card1-smallcard{
+    width:16.5rem;
+    height:12rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.account-card1-smallcard-title{
+    font-size: 16px;
+    line-height: 2.5rem;
+    padding-left: 1.5rem;
+    border-bottom: 1px solid white;
+    margin-bottom: 0rem;
+}
+.account-card1-input-title{
+    font-size: 16px;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+}
+
+.account-card1-input{
+    padding:0 1.5rem;
+}
+
+.account-card1-infotext{
+    padding:0 1.5rem;
+    line-height: 2rem;
+}
+
+.account-card1-smallcard .ant-form-item{
+    margin-bottom: 0;
+}
+
+.account-card1-input .ant-input{
+    background-color: var(--weverseBlack);
+    color:white;
+    border-radius: 2rem;
+    padding: 4px 1rem;
+}
+
+.account-card1-input .ant-checkbox-wrapper{
+    color: white;
+}
+
+.account-card1-input .ant-checkbox-disabled + span{
+    color: white;
+
+}
+
+.account-checkbox-margin{
+    margin-top: 1rem;
+}
+
+.account-card1-input .ant-input-affix-wrapper{
+    background-color: var(--weverseBlack);
+    border-radius: 2rem;
+}
+
+.account-edit-btn .ant-btn-primary{
+    background-color: transparent;
+    width:6rem;
+    color:var(--weversePurple);
+    height:2rem;
+    border-radius: 10px;
+    border: 1px solid var(--weversePurple);
+    margin-left: 2rem;
+
+    /* margin-left: 20rem; */
+}
+
+.account-cancel-btn .ant-btn-primary{
+    background-color: transparent;
+    width:6rem;
+    color:var(--weversePurple);
+    height:2rem;
+    border-radius: 10px;
+    border: 1px solid var(--weversePurple);
+    margin-left: 2rem;
+
+    /* margin-left: 12rem; */
+}
+
+.account-save-btn .ant-btn-primary{
+    background-color: transparent;
+    width:6rem;
+    color: white;
+    background-color: var(--weversePurple);
+    height:2rem;
+    border-radius: 10px;
+    border: 1px solid var(--weversePurple);
+    margin-left: 2rem;
+}
+
+.account-editing-btn{
+    display: flex;
+    flex-direction: row;
+}
+
+.account-card1-input .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    background-color: transparent;
+    border-radius: 2rem;
+}
+
+.account-card1-input .ant-select{
+    color:white;
+}

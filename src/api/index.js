@@ -213,8 +213,8 @@ export const getUserInfoById = async () => {
 }
 ////////////USER INFO////////////
 ////////////USER INFO UPDATE////////////
-export const updateUserInfoApi = async (email, password, name) => {
-  //,niackName,phoneNumber,address,address2,birthday,gender,notify1,notify2,notify3
+export const updateUserInfoApi = async (email, password, name,nickName,phoneNumber,address,address2,birthday,gender,notify1,notify2,notify3) => {
+  //,nickName,phoneNumber,address,address2,birthday,gender,notify1,notify2,notify3
   console.log(email);
   console.log(password);
   console.log(name)
@@ -223,8 +223,26 @@ export const updateUserInfoApi = async (email, password, name) => {
 
   if(name)
       await userRef.update({name: name});
+  if(nickName)
+    await userRef.update({nickName: nickName});
+  if(phoneNumber)
+    await userRef.update({phoneNumber:phoneNumber});
+  if(address)
+    await userRef.update({address:address});
+  if(address2)
+    await userRef.update({address2:address2});
+  if(birthday)
+    await userRef.update({birthday:birthday});
+  if(gender)
+    await userRef.update({gender:gender});
+  if(notify1)
+    await userRef.update({notify1:notify1});
+  if(notify2)
+    await userRef.update({notify2:notify2});
+  if(notify3)
+    await userRef.update({notify3:notify3});
   if(email)
-    await user.updateEmail(String(email));
+    await userRef.update({email:email});
   if(password)
     await user.updatePassword(password);
   return user;

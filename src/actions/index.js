@@ -307,10 +307,22 @@ import {
   export const updateUserInfo = async (dispatch, userInfo) => {
     dispatch({ type: BEGIN_UPDATE_USERINFO });
     try {
+  //,,,,,,,,notify2,notify3
+
       const user = await updateUserInfoApi(
         userInfo.email,
         userInfo.password,
-        userInfo.name
+        userInfo.name,
+        userInfo.nickName,
+        userInfo.phoneNumber,
+        userInfo.address,
+        userInfo.address2,
+        userInfo.birthday,
+        userInfo.gender,
+        userInfo.notify1,
+        userInfo.notify2,
+        userInfo.notify3,
+
       );
       dispatch({
         type: SUCCESS_UPDATE_USERINFO,

@@ -7,15 +7,21 @@ import { CartIcon } from "./Icons";
 
 import { StoreContext } from "../store";
 import CartSummary from "./Shop/CartSummary";
+import { logoutFromFirebase} from "../actions";
 
 
 
 export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
+  
+  
   const { state: { userSignin: { userInfo },}, dispatch } = useContext(StoreContext);
   const [isOnTouch, setIsOnTouch] = useState(false);
   const history = useHistory();
   
-
+  const handleLogout = () => {
+    logoutFromFirebase(dispatch);
+    history.push("/");
+  };
   
   return (
     <div>
@@ -68,7 +74,9 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
                   <BellOutlined className="header-icon"/ >
                 </Link>
                 <div className="icon-user">
-                  <Link to="/">
+                  <Link to="/"
+                    onClick={handleLogout}
+                  >
                     <LoginOutlined className="header-icon"/>
                     {/* <UserOutlined / > */}
                   </Link>
