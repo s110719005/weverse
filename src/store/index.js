@@ -43,6 +43,11 @@ import {
   BEGIN_UPDATE_USERINFO,
   SUCCESS_UPDATE_USERINFO,
   FAIL_UPDATE_USERINFO,
+  //user info
+  BEGIN_REPLYUSERINFO_REQUEST,
+  SUCCESS_REPLYUSERINFO_REQUEST,
+  FAIL_REPLYUSERINFO_REQUEST,
+  SET_REPLYUSERINFO_CONTENT,
 } from "../utils/constants";
 
 
@@ -160,6 +165,8 @@ import {
     loading: false,
     error: null,
   },
+  //reply user info
+  replyName:""
   
 };
 
@@ -371,6 +378,19 @@ function reducer(state, action) {
           error: action.payload,
         },
       };
+    ////////////USER INFO UPDATE////////////
+    ////////////REPLY USER INFO////////////
+    case BEGIN_REPLYUSERINFO_REQUEST:
+      return { ...state, requestUserInfo: { ...state.requestUserInfo, loading: true } }
+    case SUCCESS_REPLYUSERINFO_REQUEST:
+      return { ...state, requestUserInfo: { ...state.requestUserInfo, loading: false } }
+    case FAIL_REPLYUSERINFO_REQUEST:
+      return { ...state, requestUserInfo: { ...state.requestUserInfo, loading: false,error: action.payload } }
+    case SET_REPLYUSERINFO_CONTENT:
+      return{
+        ...state,
+        replyName: action.payload,
+      }
     
     
     

@@ -5,13 +5,20 @@ import { StoreContext } from "../../store"
 
 import { SmileOutlined,StarOutlined,LikeOutlined} from '@ant-design/icons';
 
+import { setReplyUserName } from '../../actions'
+
 
 export default function ArtistPostReplies({ artistPostReply }) {
-    const { dispatch } = useContext(StoreContext);
+    const { state: { replyName  },dispatch } = useContext(StoreContext);
   const [isMoment, setIsMoment] = useState("0px");
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+
+   // const test;
   const toggleModal = () => setIsModalVisible(!isModalVisible);
-  useEffect(() => {
+  useEffect(async () => {
+       
+    //setUserName(test);
   }, []);// eslint-disable-line react-hooks/exhaustive-deps 
     return (
         <div className="artist-reply-container">
@@ -19,7 +26,8 @@ export default function ArtistPostReplies({ artistPostReply }) {
                 <div className="artist-reply-thumbnail"></div>
                 <div className="artist-reply-content">
                     <div>
-                        Name&nbsp;&nbsp;
+                        User&nbsp;&nbsp;
+                        {/* ya&nbsp;&nbsp; */}
                     </div>
                     <div>
                         {artistPostReply.replyContent}

@@ -43,6 +43,11 @@ import {
     BEGIN_UPDATE_USERINFO,
     SUCCESS_UPDATE_USERINFO,
     FAIL_UPDATE_USERINFO,
+    //reply user info
+    BEGIN_REPLYUSERINFO_REQUEST,
+    SUCCESS_REPLYUSERINFO_REQUEST,
+    FAIL_REPLYUSERINFO_REQUEST,
+    SET_REPLYUSERINFO_CONTENT,
   } from "../utils/constants";
 
   import {
@@ -62,7 +67,9 @@ import {
     //user info
     getUserInfoById,
     //user info update
-    updateUserInfoApi
+    updateUserInfoApi,
+    //reply user info
+    getUserNameByPostId,
   }from "../api"
 
   //import products from "../json/btsProducts.json";
@@ -336,4 +343,32 @@ import {
       console.log(e);
     }
   };
+
+  ////////reply user info////////
+  export const setReplyUserName = async (dispatch,uid) => {
+    
+    let user = {};
+    let name = "";
+    dispatch({ type: BEGIN_REPLYUSERINFO_REQUEST });
+    try {
+      user = await getUserNameByPostId(uid);
+      name  = user.nickName;
+        dispatch({
+          type: SET_REPLYUSERINFO_CONTENT,
+          payload: {
+            name
+          }
+        })
+        //console.log(info);
+      dispatch({ type: SUCCESS_REPLYUSERINFO_REQUEST 
+      });
+      console.log(user.nickName);
+      
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_REPLYUSERINFO_REQUEST, payload: error });
+    }
+  }
+  ////////reply user info////////
+
 

@@ -6,12 +6,22 @@ import { StoreContext } from "../../store"
 import { SmileOutlined,StarOutlined,LikeOutlined} from '@ant-design/icons';
 import ArtistPostReplies from "./ArtistPostReply";
 import ArtistUserReply from "./ArtistUserReply";
+import { setReplyUserName } from '../../actions'
+
 
 export default function ArtistPostItem({ artistPost }) {
-    const { dispatch } = useContext(StoreContext);
+    const { state: { replyName  },dispatch } = useContext(StoreContext);
   const [isMoment, setIsMoment] = useState("0px");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [userName, setUserName] = useState("User");
+
   const toggleModal = () => setIsModalVisible(!isModalVisible);
+  const setReplyName = async (uid) => {
+    //await setReplyUserName(dispatch,uid);
+    //setUserName(replyName.name);
+    
+    console.log(replyName);
+  }
   useEffect(() => {
   }, []);// eslint-disable-line react-hooks/exhaustive-deps 
     return (
@@ -49,6 +59,7 @@ export default function ArtistPostItem({ artistPost }) {
                         <div className="artist-post-image-container">
                            <div>
                                 {artistPost.image.map((artistPostImage,index) => (
+                                    
                                     index > 1 ? (
                                         <div className="">
                                             <img
@@ -184,24 +195,37 @@ export default function ArtistPostItem({ artistPost }) {
                 
             </div>
             <div>
-                {artistPost.reply.map((artistPostReply,index) => (
-                    index < 2 ?(
-                        <div>
-                            <ArtistPostReplies artistPostReply={artistPostReply}/>
-                        </div>
-                    ):(
-                        index === 2 ?(
-                            <div className="artist-more-comments-container">
-                                <div className="artist-more-comments">
-                                    more comments
-                                </div>
+                {artistPost.reply.map((artistPostReply,index) => 
+                    
+                    <div>
+                        {/* {index < artistPost.reply.length ? 
+                            (<div>
+                                {setReplyName (artistPostReply.uid)}
+                            </div>) : 
+                            {}
+                        } */}
+                    
+                    {(
+                        index < 2 ?(
+                            <div>
+                                {/* {artistPostReply.uid} */}
+                                <ArtistPostReplies artistPostReply={artistPostReply} />
                             </div>
                         ):(
-                            <div className="">
-                            </div>
-                        )
-                    )
-                ))}
+                            index === 2 ?(
+                                <div className="artist-more-comments-container">
+                                    <div className="artist-more-comments">
+                                        more comments
+                                    </div>
+                                </div>
+                            ):(
+                                <div className="">
+                                </div>
+                            )
+                            )
+                    )}
+                    </div>
+                )}
             </div>
             <div>
                 <ArtistUserReply artistPost = {artistPost}/>

@@ -247,3 +247,14 @@ export const updateUserInfoApi = async (email, password, name,nickName,phoneNumb
     await user.updatePassword(password);
   return user;
 }
+
+///////////USER REPLY////////////
+export const getUserNameByPostId = async (uid) => {
+  
+  let user = {};
+  const userDoc = await allUserRef.doc(uid).get();
+  user = userDoc.data();
+  console.log(user);
+  return user;
+  
+}
