@@ -5,6 +5,7 @@ import { StoreContext } from "../../store"
 
 import { SmileOutlined,StarOutlined,LikeOutlined} from '@ant-design/icons';
 import ArtistPostReplies from "./ArtistPostReply";
+import ArtistUserReply from "./ArtistUserReply";
 
 export default function ArtistPostItem({ artistPost }) {
     const { dispatch } = useContext(StoreContext);
@@ -183,11 +184,27 @@ export default function ArtistPostItem({ artistPost }) {
                 
             </div>
             <div>
-                {artistPost.reply.map(artistPostReply => (
-                    <div className="">
-                        <ArtistPostReplies artistPostReply={artistPostReply}/>
-                    </div>
+                {artistPost.reply.map((artistPostReply,index) => (
+                    index < 2 ?(
+                        <div>
+                            <ArtistPostReplies artistPostReply={artistPostReply}/>
+                        </div>
+                    ):(
+                        index === 2 ?(
+                            <div className="artist-more-comments-container">
+                                <div className="artist-more-comments">
+                                    more comments
+                                </div>
+                            </div>
+                        ):(
+                            <div className="">
+                            </div>
+                        )
+                    )
                 ))}
+            </div>
+            <div>
+                <ArtistUserReply artistPost = {artistPost}/>
             </div>
         </div>
     );

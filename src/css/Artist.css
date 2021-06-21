@@ -301,4 +301,66 @@
     color:var(--weverseBlue)
   }
 
+  .artist-more-comments-container{
+      width:100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .artist-more-comments{
+      width:13rem;
+      height:2rem;
+      line-height: 2rem;
+      /* background-color: aquamarine; */
+      color:var(--weversePurple);
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid var(--weversePurple);
+      border-radius: 10px;
+      cursor: pointer;
+  }
+
+  .artist-reply-input .ant-btn-primary{
+    background-color: var(--weverseBlack);
+    border-color: transparent;
+
+  }
+
+  .artist-reply-input .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    border-radius: 0px 10px 10px 0px;
+
+  }
+  .artist-reply-input{
+      width:30.9rem;
+      height:3rem;
+      background: linear-gradient(35deg, var(--weverseGreen) 20%, var(--weverseBlue) 84%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+  }
+  .artist-reply-input .ant-input{
+      color:white;
+      background-color: var(--weverseBlack);
+      line-height: 2rem;
+      width:26rem;
+      border-color: transparent;
+      border-radius: 10px;
+  }
+
+  .artist-reply-input .ant-input-group-addon{
+    background-color: var(--weverseBlack);
+    margin-right: 0;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  .artist-reply-input .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child{
+    left:0
+  }
+
+  .artist-userreply-container{
+      margin-top: 1.5rem;
+  }
+
 

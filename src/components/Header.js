@@ -1,6 +1,6 @@
 import { useContext,useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingOutlined,MenuOutlined,BellOutlined,UserOutlined,MenuFoldOutlined,MenuUnfoldOutlined } from '@ant-design/icons';
+import { ShoppingOutlined,MenuOutlined,BellOutlined,UserOutlined,MenuFoldOutlined,MenuUnfoldOutlined,LoginOutlined } from '@ant-design/icons';
 import { CartIcon } from "./Icons";
 
 import { StoreContext } from "../store";
@@ -53,7 +53,8 @@ export default function Header({ setIsNavBarVisible,isNavBarVisible }) {
           <div className="icon-user">
 
           <Link to="/">
-            <UserOutlined className="header-icon"/ >
+            <LoginOutlined className="header-icon"/>
+            {/* <UserOutlined / > */}
           </Link>
           </div>
         </div>
