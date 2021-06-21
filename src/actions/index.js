@@ -34,6 +34,15 @@ import {
     SUCCESS_ARTISTPOST_REQUEST,
     FAIL_ARTISTPOST_REQUEST,
     SET_ARTISTPOST_CONTENT,
+    //user info
+    BEGIN_USERINFO_REQUEST,
+    SUCCESS_USERINFO_REQUEST,
+    FAIL_USERINFO_REQUEST,
+    SET_USERINFO_CONTENT,
+    //user info update
+    BEGIN_UPDATE_USERINFO,
+    SUCCESS_UPDATE_USERINFO,
+    FAIL_UPDATE_USERINFO,
   } from "../utils/constants";
 
   import {
@@ -50,6 +59,10 @@ import {
     getMomentById,
     //artist post
     getArtistPosts,
+    //user info
+    getUserInfoById,
+    //user info update
+    updateUserInfoApi
   }from "../api"
 
   //import products from "../json/btsProducts.json";
@@ -249,7 +262,7 @@ import {
       dispatch({ type: FAIL_MOMENT_REQUEST, payload: error });
     }
   };
-
+  ////////moment////////
   ////////artist post////////
   export const setArtistPost = async (dispatch, url) => {
     let artistPosts = [];
@@ -268,3 +281,47 @@ import {
       dispatch({ type: FAIL_ARTISTPOST_REQUEST, payload: error });
     }
   };
+  ////////artist post////////
+  ////////user info////////
+  export const setUserInfo = async (dispatch) => {
+    let info = {};
+
+    dispatch({ type: BEGIN_USERINFO_REQUEST });
+    try {
+      info = await getUserInfoById();
+        dispatch({
+          type: SET_USERINFO_CONTENT,
+          payload: {
+            info
+          }
+        })
+        console.log(info);
+      dispatch({ type: SUCCESS_USERINFO_REQUEST });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: FAIL_USERINFO_REQUEST, payload: error });
+    }
+  }
+  ////////user info////////
+  ////////user info update////////
+  export const updateUserInfo = async (dispatch, userInfo) => {
+    dispatch({ type: BEGIN_UPDATE_USERINFO });
+    try {
+      const user = await updateUserInfoApi(
+        userInfo.email,
+        userInfo.password,
+        userInfo.name
+      );
+      dispatch({
+        type: SUCCESS_UPDATE_USERINFO,
+        payload: user.providerData[0],
+      });
+    } catch (e) {
+      dispatch({
+        type: FAIL_UPDATE_USERINFO,
+        payload: e.message,
+      });
+      console.log(e);
+    }
+  };
+

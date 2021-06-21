@@ -107,7 +107,6 @@ export const signInWithEmailPassword = async (email, password) => {
 export const registerWithEmailPassword = async (email, password, name,birthday,gender,address,phoneNumber) => {
   await auth.createUserWithEmailAndPassword(email, password);
   const user = auth.currentUser;
-  const userId = auth.currentUser.uid;
 
   await user.updateProfile({
     displayName: name,
@@ -116,20 +115,22 @@ export const registerWithEmailPassword = async (email, password, name,birthday,g
     // address: address,
     // phoneNumber: phoneNumber
   })
-  const userRef = await allUserRef.doc();
+  const userRef = await allUserRef.doc(auth.currentUser.uid);
+  const id = userRef.id;
   await userRef.set({
+    uid: auth.currentUser.uid,  
     name: name,
-    gender: gender,
-    address: address,
+    nickName:"User",
+    thumbnail:"https://github.com/unbeliebubble/img/blob/main/profile_pic/profile_pic3.png?raw=true",
     phoneNumber: phoneNumber,
-    uid: auth.currentUser.uid,
+    address: address,
+    address2:"",
+    birthday:"",
+    gender: gender,
+    notify1:true,
+    notify2:true,
+    notify3:true,
   });
-  // name: name,
-  //   birthday: birthday,
-  //   gender: gender,
-  //   address: address,
-  //   phoneNumber: phoneNumber,
-  //   uid: auth.currentUser.uid,
   return user;
 }
 
@@ -197,3 +198,34 @@ export const getArtistPosts = async(url) => {
   return btsPostCollection;
 }
 ////////////ARTIST POST////////////
+////////////USER INFO////////////
+
+export const getUserInfoById = async () => {
+  
+  const user = auth.currentUser.uid;
+  let userInfo = {};
+
+  const doc = await allUserRef.doc(user).get();
+  userInfo = doc.data();
+  console.log(userInfo);
+  return userInfo;
+  
+}
+////////////USER INFO////////////
+////////////USER INFO UPDATE////////////
+export const updateUserInfoApi = async (email, password, name) => {
+  //,niackName,phoneNumber,address,address2,birthday,gender,notify1,notify2,notify3
+  console.log(email);
+  console.log(password);
+  console.log(name)
+  const user = auth.currentUser;
+  const userRef = await allUserRef.doc(user.uid);
+
+  if(name)
+      await userRef.update({name: name});
+  if(email)
+    await user.updateEmail(String(email));
+  if(password)
+    await user.updatePassword(password);
+  return user;
+}

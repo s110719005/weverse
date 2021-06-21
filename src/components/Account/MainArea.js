@@ -10,6 +10,9 @@ import {useSpring, animated} from 'react-spring'
 
 import { StoreContext } from "../../store"
 import { logoutFromFirebase} from "../../actions";
+import AccountCard1 from "./AccountCard1";
+
+import { UserOutlined,LineChartOutlined,SnippetsOutlined,StarOutlined } from '@ant-design/icons';
 
 
 
@@ -33,36 +36,42 @@ function MainArea({isNavBarVisible}) {
         paddingRight: !isNavBarVisible?"2rem":"3rem",
       });
     return (
-        <animated.div  style={closeNav} className="mainarea">
+        <animated.div  style={closeNav} className="mainarea text-white">
            
        
         {isNavBarVisible ? true : false }
-            <Button
-            type="danger"
-            style={{ marginTop: "0.8rem" }}
-            className="login-form__button"
-            onClick={handleLogout}
-            >
+          <div className="text-white">
+            Account
+          </div>
+          <div>
+            <div>
+              <div className="account-icon1-container">
+                <UserOutlined />
+              </div>
+              <div>
+                <LineChartOutlined /> 
+              </div>
+              <div>
+                <StarOutlined />
+              </div>
+              <div>
+                <SnippetsOutlined />
+              </div>
+            </div>
+            <div>
+              Account Management{/* <AccountCard1/> */}
+            </div>
+          </div>
+          
+          <Button
+          type="danger"
+          style={{ marginTop: "0.8rem" }}
+          className="login-form__button"
+          onClick={handleLogout}
+          >
             Log out
-            </Button>
-            <div className="text-white">
-              {userInfo.displayName}
-            </div>
-            <div className="text-white">
-              {userInfo.email}
-            </div>
-            <div className="text-white">
-              {userInfo.gender}
-            </div>
-            <div className="text-white">
-              {userInfo.address}
-            </div>
-            <div className="text-white">
-              {userInfo.displayName}
-            </div>
-            <div className="text-white">
-              {userInfo.phone}
-            </div>
+          </Button>
+            
             
             
             

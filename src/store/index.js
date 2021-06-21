@@ -34,6 +34,15 @@ import {
   SUCCESS_ARTISTPOST_REQUEST,
   FAIL_ARTISTPOST_REQUEST,
   SET_ARTISTPOST_CONTENT,
+  //user info
+  BEGIN_USERINFO_REQUEST,
+  SUCCESS_USERINFO_REQUEST,
+  FAIL_USERINFO_REQUEST,
+  SET_USERINFO_CONTENT,
+  //user info update
+  BEGIN_UPDATE_USERINFO,
+  SUCCESS_UPDATE_USERINFO,
+  FAIL_UPDATE_USERINFO,
 } from "../utils/constants";
 
 
@@ -140,6 +149,14 @@ import {
     artistPosts:[]
   },
   requestArtistPosts: {
+    loading: false,
+    error: null,
+  },
+  //user info
+  userInfo:{
+    info:{}
+  },
+  requestUserInfo: {
     loading: false,
     error: null,
   },
@@ -319,10 +336,45 @@ function reducer(state, action) {
         artistPostList: action.payload,
       }
     ////////////ARTIST POST////////////
-      
-
-
-
+    ////////////USER INFO////////////
+    case BEGIN_USERINFO_REQUEST:
+      return { ...state, requestUserInfo: { ...state.requestUserInfo, loading: true } }
+    case SUCCESS_USERINFO_REQUEST:
+      return { ...state, requestUserInfo: { ...state.requestUserInfo, loading: false } }
+    case FAIL_USERINFO_REQUEST:
+      return { ...state, requestUserInfo: { ...state.requestUserInfo, loading: false,error: action.payload } }
+    case SET_USERINFO_CONTENT:
+      return{
+        ...state,
+        userInfo: action.payload,
+      }
+    ////////////USER INFO////////////
+    ////////////USER INFO UPDATE////////////
+    case BEGIN_UPDATE_USERINFO:
+      return { ...state, userSignin: { ...state.userSignin, loading: true } };
+    case SUCCESS_UPDATE_USERINFO:
+      return {
+        ...state,
+        userSignin: {
+          ...state.userSignin,
+          loading: false,
+          userInfo: action.payload,
+          error: "",
+        },
+      };
+    case FAIL_UPDATE_USERINFO:
+      return {
+        ...state,
+        userSignin: {
+          ...state.userSignin,
+          loading: false,
+          error: action.payload,
+        },
+      };
+    
+    
+    
+    
 
     default:
       return state;
