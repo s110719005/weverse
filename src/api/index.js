@@ -23,6 +23,41 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+const store = firebase.firestore();
+store.enablePersistence()
+.catch(function(err) {
+    if (err.code == 'failed-precondition') {
+        // Multiple tabs open, persistence can only be enabled
+        // in one tab at a a time.
+        // ...
+        console.log(err.code);
+    } else if (err.code == 'unimplemented') {
+        // The current browser does not support all of the
+        // features required to enable persistence
+        // ...
+        console.log(err.code);
+    }
+});
+
+const enableFireStoreDataPersistance = async()=>{
+ try{
+   await store.enablePersistence();
+
+ }catch(err){
+      if (err.code == 'failed-precondition') {
+        // Multiple tabs open, persistence can only be enabled
+        // in one tab at a a time.
+        // ...
+        console.log(err.code);
+    } else if (err.code == 'unimplemented') {
+        // The current browser does not support all of the
+        // features required to enable persistence
+        // ...
+        console.log(err.code);
+    }
+ }
+}
+
 export const getArtistJSON = (url) => {
   switch (url) {
     case "/Shop":
