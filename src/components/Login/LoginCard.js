@@ -121,9 +121,27 @@ function LoginCard({ redirect }) {
                     Sign up with Social Media Account
             </div>
             <div className="login-socialmedia-container">
-                    <div className="login-socialmedia-icon"></div>
-                    <div className="login-socialmedia-icon"></div>
-                    <div className="login-socialmedia-icon"></div>
+                    <div className="login-socialmedia-icon">
+                        <img
+                            className="login-icon"
+                            src="https://github.com/unbeliebubble/img/blob/main/sns_logo/facebook.png?raw=true"
+                            alt="Facebook"
+                        />
+                    </div>
+                    <div className="login-socialmedia-icon">
+                        <img
+                            className="login-icon"
+                            src="https://github.com/unbeliebubble/img/blob/main/sns_logo/google.png?raw=true"
+                            alt="Google"
+                        />
+                    </div>
+                    <div className="login-socialmedia-icon">
+                        <img
+                            className="login-icon"
+                            src="https://github.com/unbeliebubble/img/blob/main/sns_logo/twitter.png?raw=true"
+                            alt="Twitter"
+                        />
+                    </div>
             </div>
         </div>
         
